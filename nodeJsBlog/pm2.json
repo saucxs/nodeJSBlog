@@ -1,0 +1,15 @@
+{
+  "apps": [{
+    "name": "nodeJsBlog",
+    "script": "production.js",
+    "cwd": "G:\02GitHub\nodeJSBlog\nodeJsBlog",
+    "exec_mode": "fork",
+    "max_memory_restart": "1G",
+    "autorestart": true,
+    "node_args": [],
+    "args": [],
+    "env": {
+      
+    }
+  }]
+}
