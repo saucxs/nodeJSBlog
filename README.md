@@ -1,2 +1,2 @@
 # nodeJSBlog
-nodeJSBlog
+nodeJSBlog基于thinkjs框架的nodejs博客系统
