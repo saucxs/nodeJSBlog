@@ -1,0 +1,37 @@
+{% extends "../admin/inc/admin_base.html" %}
+{% block head %}
+    {{ super() }}
+    <style>
+        .breadcrumb{padding: 0 15px;}
+        .alert-danger {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+        .alert {
+            padding: 30px 10px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .main{
+            width:96%;margin:0 auto;
+            margin-left: 2%;
+            text-align: center;
+            top: 50%;
+            margin-top: -160px;
+            position: absolute;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <div class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+              抱歉，您没有权限访问,请与系统管理员联系!
+        </div>
+    </div>
+{% endblock %}
