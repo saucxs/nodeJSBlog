@@ -1,56 +1,46 @@
 {
-  "name": "nodeJsBlog",
-  "description": "application created by thinkjs",
-  "version": "1.0.0",
-  "author": "15566151641@163.com",
-  "scripts": {
-    "start": "node development.js",
-    "test": "THINK_UNIT_TEST=1 nyc ava test/ && nyc report --reporter=html",
-    "compile": "babel --no-babelrc src/ --presets think-node --out-dir app/",
-    "lint": "eslint src/",
-    "lint-fix": "eslint --fix src/"
-  },
-  "dependencies": {
-    "think-cache": "^1.0.0",
-    "think-session": "^1.0.0",
-    "think-cache-file": "^1.0.8",
-    "think-model": "^1.0.0",
-    "think-session-file": "^1.0.5",
-    "think-view": "^1.0.0",
-    "think-view-nunjucks": "^1.0.1",
-    "think-model-mysql": "^1.0.0",
-    "think-logger3": "^1.0.0",
-    "thinkjs": "^3.0.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-think-node": "^1.0.0",
-    "node-notifier": "^5.0.2",
-    "think-inspect": "0.0.2",
-    "think-babel": "^1.0.3",
-    "think-watcher": "^3.0.0",
-    "eslint": "^4.2.0",
-    "eslint-config-think": "^1.0.0",
-    "ava": "^0.18.0",
-    "nyc": "^7.0.0"
-  },
-  "repository": "",
-  "license": "MIT",
-  "engines": {
-    "node": ">=6.0.0"
-  },
-  "readmeFilename": "README.md",
-  "thinkjs": {
-    "metadata": {
-      "name": "nodeJsBlog",
-      "description": "application created by thinkjs",
-      "author": "15566151641@163.com",
-      "babel": true
+    "name": "thinkjs-application",
+    "description": "application created by thinkjs",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node www/development.js",
+        "dev": "node www/development.js",
+        "app": "node www/production.js",
+        "compress": "gulp default",
+        "compile": "babel --presets es2015-loose,stage-1 --plugins transform-runtime src/ --out-dir app/ --retain-lines",
+        "watch-compile": "node -e \"console.log('<npm run watch-compile> no longer need, use <npm start> command direct.');console.log();\"",
+        "watch": "npm run watch-compile"
     },
-    "projectName": "nodeJsBlog",
-    "templateName": "C:\\Users\\15566\\AppData\\Roaming\\npm\\node_modules\\think-cli\\default_template",
-    "cacheTemplatePath": "C:\\Users\\15566\\.think-templates\\C--Users-15566-AppData-Roaming-npm-node_modules-think-cli-default_template",
-    "clone": false,
-    "isMultiModule": false
-  }
+    "dependencies": {
+        "ali-oss": "4.5.0",
+        "babel-runtime": "6.x.x",
+        "cheerio": "^0.22.0",
+        "co": "4.5.0",
+        "geetest": "^3.0.2",
+        "marked": "^0.3.5",
+        "nodemailer": "^0.7.1",
+        "nunjucks": "^2.2.0",
+        "pm2": "^1.1.2",
+        "request": "^2.74.0",
+        "source-map-support": "^0.4.0",
+        "thinkjs": "2.2.12",
+        "transfer-webpack-plugin": "^0.1.4"
+    },
+    "devDependencies": {
+        "babel-cli": "6.x.x",
+        "babel-core": "6.x.x",
+        "babel-plugin-transform-runtime": "6.x.x",
+        "babel-preset-es2015-loose": "6.x.x",
+        "babel-preset-stage-1": "6.x.x",
+        "gulp": "^3.8.10",
+        "gulp-concat": "2.6.0",
+        "gulp-cssmin": "0.1.7",
+        "gulp-file-include": "0.13.7",
+        "gulp-html-replace": "^1.6.2",
+        "gulp-md5-plus": "0.1.8",
+        "gulp-minify-html": "^1.0.6",
+        "gulp-uglify": "1.4.2"
+    },
+    "repository": "",
+    "license": "MIT"
 }
