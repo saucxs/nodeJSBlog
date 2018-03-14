@@ -1,7 +1,26 @@
 # nodeJSBlog
 交流学习社区系统，后端完全使用`nodeJS`，数据库使用`mysql`，基于`nodejs的thinkjs框架搭建的`，支持：1、文章评论；2、代码高亮；3、文章内容分页；4、小型bbs社区讨论社区；5、后台管理；6、权限管理等功能
-如果喜欢`nodeJS`写的后端，支持大前端，支持全栈开发，请请`star`并`fork`项目。系统地址为：http://www.mwcxs.top
+如果喜欢`nodeJS`写的后端，支持大前端，支持全栈开发，请请`star`并`fork`项目。系统地址为：[前台系统网站](http://www.mwcxs.top)。[后台系统网站](http://www.mwcxs.top/admin)
 如有使用问题请留言。
+
+### 技术栈
+> + ThinkJS（ Node端框架） [官方网站](https://thinkjs.org/)
+> + doT.js（Node端模版引擎）  [官方文档](http://olado.github.io/doT/index.html)
+> + jQuery.js（都懂得……）  [中文文档](http://jquery.cuishifeng.cn/)
+> + Vue.js（客户端双向数据绑定框架）  [官方网站](https://cn.vuejs.org/)
+
+### 目录结构
+
++ app    —— node端编译后文件夹，一般情况不需要关注
++ src    —— node端服务文件夹，以业务模块划分子文件夹
++ view   —— 静态页面文件夹，以业务模块划分子文件夹与src对应
++ www
+    - static —— 静态资源文件
+        - admin —— 管理后台
+        - theme  —— 主题文件
+        - upload —— 上传文件
+    - development.js  -- 开发环境
+    - production.js   -- 生产环境    
 
 ### 一、功能特点
 1. 文章评论；
@@ -11,10 +30,12 @@
 5. 后台管理；
 6. 权限管理
 
-### 二、下一版的功能
-0. 移动端少数页面的兼容性
-1. 系统主题设置
-2. 完善后台功能
+### 二、版本功能
++ 2017.03.14
+   - 移动端少数页面的兼容性
++ 下一版
+    - 系统主题设置
+    - 完善后台功能
 
 ### 三、系统截图
 #### 3.1 无线端
@@ -29,6 +50,9 @@ npm run compress
 
 //运行开发模式，html,css,js均加载未压缩版本
 npm run dev  
+
+//开发模式的浏览器，浏览器访问
+http://127.0.0.1:8361/
 
 //运行生产模式，html,css,js均加载压缩版本
 npm run app  
