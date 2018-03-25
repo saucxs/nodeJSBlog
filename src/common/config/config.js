@@ -20,8 +20,8 @@ export default {
     },
     geetest: {
         //极验验证码配置，申请地址：http://www.geetest.com，请改成自己帐号！
-        geetest_id: 'a4ba8061bc9741e47980e8b69e9afbf6',
-        geetest_key: '4da57a23875809329871b4e0be3a53d6'
+        geetest_id: '948d856e33a46dea94e2a8fec02f5392',
+        geetest_key: '5704cf37dd9e1d3d38f9eea52fa31a4e'
     },
     point: {
         addcollect: 1,

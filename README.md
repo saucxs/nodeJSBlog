@@ -13,6 +13,16 @@
 
 + app    —— node端编译后文件夹，一般情况不需要关注
 + src    —— node端服务文件夹，以业务模块划分子文件夹
+    - admin  -- 管理后台
+    - common  -- 公共模块
+        - adapter  -- adapter配置   
+        - bootstrap -- bootstrap框架
+        - config -- 框架需要的配置以及项目自定义的配置（多模块）  
+        - controller -- 控制器层
+        - service -- 服务层
+    - home -- 主页模块
+    - personal -- 个人模块
+    - topic -- 话题模块     
 + view   —— 静态页面文件夹，以业务模块划分子文件夹与src对应
 + www
     - static —— 静态资源文件
