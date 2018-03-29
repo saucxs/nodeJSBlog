@@ -14,14 +14,14 @@
 + app    —— node端编译后文件夹，一般情况不需要关注
 + src    —— node端服务文件夹，以业务模块划分子文件夹
     - admin  -- 管理后台
-    - common  -- 公共模块
+    - common  -- 通用模块，放置主配置参数、boostrap adapter middleware service 等相关组件
         - adapter  -- adapter配置   
         - bootstrap -- bootstrap框架
         - config -- 框架需要的配置以及项目自定义的配置（多模块）  
         - controller -- 控制器层
         - service -- 服务层
-    - home -- 主页模块
-    - personal -- 个人模块
+    - home -- 前端默认模块
+    - personal --  后端管理模块
     - topic -- 话题模块     
 + view   —— 静态页面文件夹，以业务模块划分子文件夹与src对应
 + www
@@ -54,6 +54,7 @@
 ![image](./screen-pic-2.png)
 
 ### 四、运行程序请选择运行模式
+可能目前fork，安装完依赖后还是不能正常显示，而是报500，那是因为数据库配置没有更改
 ```javascript
 //压缩html,css,js 并生成相应目录
 npm run compress
