@@ -5,7 +5,6 @@
 
 ### 技术栈
 > + ThinkJS（ Node端框架） [官方网站](https://thinkjs.org/)
-> + doT.js（Node端模版引擎）  [官方文档](http://olado.github.io/doT/index.html)
 > + jQuery.js（都懂得……）  [中文文档](http://jquery.cuishifeng.cn/)
 > + Vue.js（客户端双向数据绑定框架）  [官方网站](https://cn.vuejs.org/)
 
