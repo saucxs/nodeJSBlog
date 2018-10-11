@@ -1,5 +1,10 @@
-# nodeJSBlog
-交流学习社区系统，后端完全使用`nodeJS`，数据库使用`mysql`，基于`nodejs的thinkjs框架搭建的`，支持：1、文章评论；2、代码高亮；3、文章内容分页；4、小型bbs社区讨论社区；5、后台管理；6、权限管理等功能
+# [nodeJSBlog](https://github.com/saucxs/nodeJSBlog)
+[![](https://img.shields.io/badge/Powered%20by-saucxs%20-brightgreen.svg)](https://github.com/saucxs/nodeJSBlog)
+[![GitHub license](https://img.shields.io/github/license/saucxs/nodeJSBlog.svg)](https://github.com/saucxs/nodeJSBlog/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/saucxs/nodeJSBlog.svg?style=popout)](https://github.com/saucxs/nodeJSBlog/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/saucxs/nodeJSBlog.svg?style=popout)](https://github.com/saucxs/nodeJSBlog/issues)
+
+交流学习社区系统，是一个拥有博客功能和社区分享评论功能的一个学习分享平台，后端完全使用nodeJS，数据库使用mysql，基于nodejs的thinkjs框架搭建的，支持：1、文章评论；2、代码高亮；3、文章内容分页；4、小型bbs社区讨论社区；5、后台管理；6、权限管理等功能 。
 如果喜欢`nodeJS`写的后端，支持大前端，支持全栈开发，请请`star`并`fork`项目。系统地址为：[前台系统网站](http://www.mwcxs.top)。[后台系统网站](http://www.mwcxs.top/admin)
 如有使用问题请留言。
 
