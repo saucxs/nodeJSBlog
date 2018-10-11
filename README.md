@@ -2,6 +2,7 @@
 [![](https://img.shields.io/badge/Powered%20by-saucxs%20-brightgreen.svg)](https://github.com/saucxs/nodeJSBlog)
 [![GitHub license](https://img.shields.io/github/license/saucxs/nodeJSBlog.svg)](https://github.com/saucxs/nodeJSBlog/blob/master/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/saucxs/nodeJSBlog.svg?style=popout)](https://github.com/saucxs/nodeJSBlog/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/saucxs/nodeJSBlog.svg?style=popout)](https://github.com/saucxs/nodeJSBlog/network)
 [![GitHub issues](https://img.shields.io/github/issues/saucxs/nodeJSBlog.svg?style=popout)](https://github.com/saucxs/nodeJSBlog/issues)
 
 交流学习社区系统，是一个拥有博客功能和社区分享评论功能的一个学习分享平台，后端完全使用nodeJS，数据库使用mysql，基于nodejs的thinkjs框架搭建的，支持：1、文章评论；2、代码高亮；3、文章内容分页；4、小型bbs社区讨论社区；5、后台管理；6、权限管理等功能 。
