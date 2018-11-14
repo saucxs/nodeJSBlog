@@ -5,7 +5,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/saucxs/nodeJSBlog.svg?style=popout)](https://github.com/saucxs/nodeJSBlog/network)
 [![GitHub issues](https://img.shields.io/github/issues/saucxs/nodeJSBlog.svg?style=popout)](https://github.com/saucxs/nodeJSBlog/issues)
 
-交流学习社区系统，是一个拥有博客功能和社区分享评论功能的一个学习分享平台，后端完全使用nodeJS，数据库使用mysql，基于nodejs的thinkjs框架搭建的，支持：1、文章评论；2、代码高亮；3、文章内容分页；4、小型bbs社区讨论社区；5、后台管理；6、权限管理等功能 。
+交流学习社区，是一个拥有博客功能，社区讨论，分享，评论等功能的一个学习分享平台，后端完全使用nodeJS，数据库使用mysql，基于nodejs的thinkjs框架搭建的，支持：1、文章评论；2、代码高亮；3、文章内容分页；4、小型bbs社区讨论社区；5、后台管理；6、权限管理等功能 。
 如果喜欢`nodeJS`写的后端，支持大前端，支持全栈开发，请请`star`并`fork`项目。系统地址为：[前台系统网站](http://www.mwcxs.top)。[后台系统网站](http://www.mwcxs.top/admin)
 如有使用问题请留言。
 
@@ -46,6 +46,8 @@
 7. 系统主题设置
 8. 头部和底部链接配置
 9. 头部滚动通告的配置
+10. 注册邮件通知
+11. 找回密码通过注册邮箱里发密码找回链接
 
 ### 二、版本功能
 + 2017.03.14
