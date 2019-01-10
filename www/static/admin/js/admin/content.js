@@ -1,5 +1,5 @@
 /**
- * Created by livi on 16/4/19.
+ * Created by saucxs on 16/4/19.
  */
 $('.add-img-btn2 input[type="file"]').on('change', function() {
     var $this = $(this);

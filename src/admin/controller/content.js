@@ -3,6 +3,7 @@
 import fs from "fs";
 import path from "path";
 import Base from './base.js';
+import request from "request";
 
 export default class extends Base
 {
@@ -148,22 +149,130 @@ export default class extends Base
     }
 
     //新增/编辑文章提交接口
-    async doaddAction()
-    {   //编辑或者新增
+    async doaddAction(){   //编辑或者新增
         let mycreatetime=think.datetime(this.post('createtime'));
         let data=await this.post();
         data.createtime=mycreatetime;
         if(!think.isEmpty(this.post("id"))){
             let rs=await this.model("admin").updateRecord("article",{},data);
+            this.baiduAction();
             if(rs) return this.success();
         }else{
             let articleinfo=await this.model("admin").addRecord("article",data);
+            this.baiduAction();
             return this.success({id:articleinfo});
         }
     }
+    /*自动实时推送提交链接*/
+    async baiduAction(){
+        let arr = [];
+        let data = {};
+        /*获取系统配置*/
+        let sysdata=await this.model('admin').findOne('system');
+        //获取分类页list
+        let list=await this.model("item").select();
+        //获取文章列表article
+        let article=await this.model("article").select();
+        //获取主题帖
+        let topic=await this.model("topic").select();
+        //获取用户
+        let user=await this.model("user").select();
+        //其他
+        let others=[
+            { id: 1, itemname: '大杂烩',url:'others.html' },
+            { id: 2, itemname: '前端资讯',url:'news.html' },
+            { id: 3, itemname: 'nodejs',url:'node.html' },
+            { id: 4, itemname: '资源下载',url:'download.html' },
+            { id: 5, itemname: '招聘',url:'jobs.html' },
+            { id: 6, itemname: '活动',url:'activity.html' },
+            { id: 7, itemname: '关于',url:'about.html' },
+            { id: 8, itemname: '友情链接',url:'links.html' },
+            { id: 9, itemname: '注册',url:'register.html' },
+            { id: 10, itemname: '捐赠',url:'donate.html' },
+            { id: 11, itemname: '推广服务',url:'ads.html' },
+            { id: 12, itemname: '注册协议',url:'policy.html' },
+            { id: 13, itemname: '版权声明',url:'copyright.html' },
+            { id: 14, itemname: '会员登录',url:'login.html' },
+            { id: 15, itemname: '留言板',url:'guest.html' },
+            { id: 16, itemname: 'nodeJSBlog',url:'nodejsblog.html' },
+        ];
+        data={
+            sysdata:sysdata,
+            list:list,
+            article:article,
+            topic:topic,
+            user: user,
+            others: others
+        }
+        arr.push(data.sysdata.homeurl);
+        for(let i=0,length=data.article.length;i<length;i++){
+            arr.push(data.sysdata.homeurl + 'page/'+ data.article[i].id +'.html')
+        }
+        for(let i=0,length=data.list.length;i<length;i++){
+            arr.push(data.sysdata.homeurl + 'category/'+ (data.list[i].id) +'.html')
+        }
+        for(let i=0,length=data.topic.length;i<length;i++){
+            arr.push( data.sysdata.homeurl + 'topic/item/'+ data.topic[i].id +'.html')
+        }
+        for(let i=0,length=data.user.length;i<length;i++){
+            arr.push( data.sysdata.homeurl + 'personal/@'+ data.user[i].name + '.html')
+        }
+        for(let i=0,length=data.others.length;i<length;i++){
+            arr.push( data.sysdata.homeurl + data.others[i].url)
+        }
 
-    async updatestatusAction()
-    {   //草稿箱发布接口
+        var bodyString = arr.join('\n');
+        fs.writeFileSync(path.resolve(think.ROOT_PATH, './www/site_url.txt'), arr.join('\n'));
+        request.post({
+            url: 'http://data.zz.baidu.com/urls?site=https://www.mwcxs.top&token=CuY4HYkx9GrCwdXc',
+            body: bodyString
+        }, function (err, res, body) {
+            console.log(body,'baidu9999999999999999999999999999999999999999999')
+            if(!err){
+                return this.json({err:err,body:body});
+            }else{
+                return this.json(err);
+            }
+        });
+        /*熊掌号每周*/
+        request.post({
+            url: 'http://data.zz.baidu.com/urls?appid=1618168323287168&token=RJP3Edxoplt9Der5&type=batch',
+            body: bodyString
+        }, function (err, res, body) {
+            console.log(body,'baiduxiongzhang666666666666666666666666666666666666666666666666666666666666666weekly')
+            if(!err){
+                return this.json({err:err,body:body});
+            }else{
+                return this.json(err);
+            }
+        });
+        /*熊掌号每天*/
+        // let article_day = await this.model("admin").getArticleListTwenty();
+        // let xiongzhang = [];
+        // let xiongzhangData = {
+        //     sysdata: sysdata,
+        //     article_day: article_day
+        // }
+        // xiongzhang.push(xiongzhangData.sysdata.homeurl);
+        // for(let i=0,length=xiongzhangData.article_day.length;i<length;i++){
+        //     xiongzhang.push(xiongzhangData.sysdata.homeurl + 'page/'+ xiongzhangData.article_day[i].id +'.html')
+        // }
+        // var xzBody = xiongzhang.join('\n');
+        // request.post({
+        //     url: 'http://data.zz.baidu.com/urls?appid=1618168323287168&token=RJP3Edxoplt9Der5&type=batch',
+        //     body: xzBody
+        // }, function (err, res, body) {
+        //     console.log(body,'baiduxiongzhang666666666666666666666666666666666666666666666666666666666666666daily')
+        //     if(!err){
+        //         return this.json({err:err,body:body});
+        //     }else{
+        //         return this.json(err);
+        //     }
+        // });
+
+    }
+
+    async updatestatusAction(){   //草稿箱发布接口
         let pid=await this.post("id");
         if(!think.isEmpty(pid)){
            let rs=await this.model("admin").updateRecord("article",{id:pid},{ispublished:1});
@@ -186,7 +295,6 @@ export default class extends Base
     //上传图片接口
     async uploadAction()
     {
-
         let IS_USE_OSS=think.config('OSS.on');
         if(IS_USE_OSS){
             //上传OSS图片接口

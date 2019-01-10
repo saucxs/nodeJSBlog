@@ -10,6 +10,18 @@ export default class extends think.controller.base {
         let _web = await this.getConfig();
         this.assign('_web', _web);
 
+        //后台配置底部连接
+        let _footerLinkData = await this.getFooterLinkConfig();
+        this.assign('_footerLink', _footerLinkData);
+
+        //后台配置头部公告
+        let _headerNoticeData = await this.getHeaderNoticeConfig();
+        this.assign('_headerNotice', _headerNoticeData);
+
+        //后台配置头部连接
+        let _headerLinkData = await this.getHeaderLinkConfig();
+        this.assign('_headerLink', _headerLinkData);
+
         //设置CSRF值
         let csrf = await this.session("__CSRF__");
         this.assign("csrf", csrf);
@@ -48,6 +60,23 @@ export default class extends think.controller.base {
     async getConfig() {
         let sysdata = await this.model('topic').findOne('system', { id: 1 });
         return sysdata;
+    }
+
+    async getFooterLinkConfig() {
+        let footerLinkData = await this.model("topic").findAll('footerlink');
+        this.assign('_footerLink', footerLinkData);
+        return footerLinkData;
+    }
+
+    async getHeaderNoticeConfig() {
+        let headerNoticeData = await this.model("topic").findOne('header_notice');
+        this.assign('_headerNotice', (headerNoticeData));
+        return headerNoticeData;
+    }
+    async getHeaderLinkConfig() {
+        let headerLinkData = await this.model("topic").findAll('headerlink');
+        this.assign('_headerLink', headerLinkData);
+        return headerLinkData;
     }
 
     // 渲染主题view层

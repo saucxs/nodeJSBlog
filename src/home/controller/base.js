@@ -10,6 +10,22 @@ export default class extends think.controller.base {
         let _web = await this.getConfig();
         this.assign('_web', _web);
 
+        /*home页的slider*/
+        let _homeImageData = await this.getHomeImageConfig();
+        this.assign('_homeImageData', _homeImageData);
+
+        //后台配置底部连接
+        let _footerLinkData = await this.getFooterLinkConfig();
+        this.assign('_footerLink', _footerLinkData);
+
+        //后台配置头部公告
+        let _headerNoticeData = await this.getHeaderNoticeConfig();
+        this.assign('_headerNotice', _headerNoticeData);
+
+        //后台配置头部连接
+        let _headerLinkData = await this.getHeaderLinkConfig();
+        this.assign('_headerLink', _headerLinkData);
+
         //设置CSRF值
         let csrf = await this.session("__CSRF__");
         this.assign("csrf", csrf);
@@ -51,8 +67,37 @@ export default class extends think.controller.base {
         return sysdata;
     }
 
+    async getHomeImageConfig() {
+        let _homeImageData = await this.model("home").findAll('home_image',{'show':'1'});
+        this.assign('_homeImageData', _homeImageData);
+        return _homeImageData;
+    }
+
+    async getFooterLinkConfig() {
+        let _footerLink = await this.model("home").findAll('footerlink');
+        this.assign('_footerLink', _footerLink);
+        return _footerLink;
+    }
+
+    async getHeaderNoticeConfig() {
+        let headerNoticeData = await this.model("home").findOne('header_notice');
+        this.assign('_headerNotice', (headerNoticeData));
+        return headerNoticeData;
+    }
+
+    async getHeaderLinkConfig() {
+        let headerLinkData = await this.model("home").findAll('headerlink');
+        this.assign('_headerLink', headerLinkData);
+        return headerLinkData;
+    }
+
     // 渲染主题view层
     async displayView(name) {
         return this.display(this.THEME_VIEW_PATH + name + '.html');
+    }
+
+    // 渲染sitemap
+    async displaySiteMapView(name) {
+        return this.display(think.ROOT_PATH + '/www/' + name + '.xml');
     }
 }

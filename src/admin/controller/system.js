@@ -30,7 +30,7 @@ export default class extends Base {
     async logoeditAction(){
         let mydata =await this.post();
         if(mydata.name) return this.success();
-       
+
     }
     async setlogoAction(){
         this.assign("title","Logo设置");
@@ -39,7 +39,6 @@ export default class extends Base {
     //上传图片接口
     async uploadAction()
     {
-
         let IS_USE_OSS=think.config('OSS.on');
         if(IS_USE_OSS){
             //上传OSS图片接口
@@ -61,8 +60,8 @@ export default class extends Base {
             let newpath = oldpath.split('/upload')[0]
             let uploadPath = newpath + '/theme/liblog/res/common/images/common/';
             let basename = path.basename(filepath);
-            fs.renameSync(filepath, uploadPath + "logo.png");
-            this.json({path: "/static/theme/liblog/res/common/images/common/logo.png"});
+            fs.renameSync(filepath, uploadPath + "logo.jpg");
+            this.json({path: "/static/theme/liblog/res/common/images/common/logo.jpg"});
         }
     }
 }

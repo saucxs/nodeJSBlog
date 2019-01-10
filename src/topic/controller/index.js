@@ -45,6 +45,7 @@ export default class extends Base {
     let uinfo=await this.session('uInfo');
     let islogin=(!think.isEmpty(uinfo))?1:0;
     this.assign("islogin",islogin);
+
     if(!think.isEmpty(uinfo)){
       let loginuserinfo=await this.model('topic').findAll('user',{name:uinfo.name});
       this.assign("loginuserinfo",loginuserinfo[0]);
@@ -72,6 +73,7 @@ export default class extends Base {
       this.assign('topicInfo',topicInfo);
       this.assign("replycount",topicInfo.replycount);
       this.assign('topicItem',topicItem.comment);
+      this.assign("title",topicInfo.title);
       return this.displayView("index_item");
 
     }else{
@@ -87,5 +89,9 @@ export default class extends Base {
     this.assign("replyInfo",replyInfo);
     this.assign("topicInfo",topicInfo);
     return this.displayView("index_edit");
+  }
+
+  async commentAction(){
+      return this.redirect('/login.html');
   }
 }

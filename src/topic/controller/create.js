@@ -2,6 +2,7 @@
 import fs from "fs";
 import path from "path";
 import Base from './base.js';
+import request from "request";
 
 export default class extends Base {
   /**
@@ -169,11 +170,11 @@ export default class extends Base {
 
   //上传图片接口
   async uploadeditorAction()
-  {   
+  {
       let IS_USE_OSS=think.config('OSS.on');
       if(IS_USE_OSS){
           //上传OSS图片接口
-          let ALIOSS = think.service("alioss"); 
+          let ALIOSS = think.service("alioss");
           let alioss = new ALIOSS();
           let file = think.extend({}, this.file('img'));
           let rs=await alioss.upload(file);

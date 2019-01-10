@@ -11,7 +11,7 @@
        <div class="topnews">
          <div class="header">
                  <a href="/topic/all" class="topic-tab  {% if tab=='all' %}current-tab{%elif tab==''%}'current-tab'{%else%}{%endif%}">全部</a>
-                 <!-- <a href="/topic/good" class="topic-tab current-tab">精华</a> -->
+                  <!--<a href="/topic/good" class="topic-tab current-tab">精华</a>-->
                  {% for item in tablist %}
                     <a href="/topic/{{item.name}}" class="topic-tab {% if tab==item.name %}current-tab{%else%}{%endif%}">
                       {% if item.name=='liblog' %}liblog专区{%else%}{{item.comment}}{%endif%}
@@ -34,7 +34,7 @@
                 </span>
                 <span class="last_time pull-right">
                   <a href="/personal/@{{item.updateauthor}}">
-                    <img class="user_small_avatar" src="{{_web.url}}{{theme_url}}/{{'common/images/pic/man.jpg' if item.updatepic=='' else item.updatepic}}" title="{{item.updateauthor}}">
+                    <img class="user_small_avatar" src="{{_web.url}}{{theme_url}}/{{'common/images/pic/man.jpg'}}" title="{{item.updateauthor}}">
                   </a>
                   <span class="last_active_time">
                     <time class="timeago" datetime="{{think.datetime(item.updatetime)}}"></time>

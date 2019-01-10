@@ -7,22 +7,22 @@ export default class extends Base {
 
     async indexAction(){
 
-        //var nodemailer  = require("nodemailer");
-        //var smtpTransport = nodemailer.createTransport("SMTP", {
+        // var nodemailer  = require("nodemailer");
+        // var smtpTransport = nodemailer.createTransport("SMTP", {
         //    service: "QQ",
         //    auth: {
-        //        user: "262248861@qq.com", // 账号
-        //        pass: "wvebvwxcsxpebiai" // 密码
+        //        user: "184866445@qq.com", // 账号
+        //        pass: "icggdlpxlixwbggi" // 密码
         //    }
-        //});
-        //smtpTransport.sendMail({
-        //    from: '262248861@qq.com',
-        //      to: "390039626@qq.com,livisky@163.com", // 收件列表
-        //subject : 'Node.JS通过SMTP协议从QQ邮箱发送邮件',
+        // });
+        // smtpTransport.sendMail({
+        //    from: '184866445@qq.com',
+        //      to: "saucxs@163.com,suningcxs@163.com", // 收件列表
+        // subject : 'Node.JS通过SMTP协议从QQ邮箱发送邮件',
         //    html: 'This is a test mail,please do not reply it! <br> '
-        //},function(err, res) {
+        // },function(err, res) {
         //    console.log(err, res);
-        //});
+        // });
 
         var nodemailer  = require("nodemailer");
         let mailer=think.config("mail");
@@ -39,7 +39,7 @@ export default class extends Base {
         });
         smtpTransport.sendMail({
             from: mailer.account,
-            to: "390039626@qq.com,livisky@163.com", // 收件列表
+            to: "saucxs@163.com,suningcxs@163.com", // 收件列表
         subject : 'Node.JS通过SMTP协议从QQ邮箱发送邮件',
             html: 'have a try!'
         },function(err, res) {

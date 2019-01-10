@@ -1,11 +1,11 @@
 <div class="cloud main-right qqregion">
-    <h3>
+    <h3 class="widget_titx">
         <span>交流咨询</span>
         <span class="github-region">
-			<a href="https://github.com/saucxs">
+			<a href="https://github.com/saucxs/nodeJSBlog">
 				<img src="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/index/images/github.png" alt=""class="github" />
 			</a>
-			<a href="https://github.com/saucxs/stargazers"  target="_blank" class="count"><b></b><i></i>
+			<a href="https://github.com/saucxs/nodeJSBlog/stargazers"  target="_blank" class="count"><b></b><i></i>
 				<span id="gitcount"></span>
         </a>
         </span>
@@ -13,12 +13,15 @@
     <ul class="qqs">
         <div>官方QQ群<br/>群号<span>663940201,欢迎加入！</span>
             <div class="qqlist">
-                <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=65dbbdbed765e804e2412503f0ee8dde17d631754db33b7c7047af5c233618e2"><img border="0" src="{{_web.url}}{{theme_url}}/common/images/common/group.png" alt="交流学习社区交流群" title="交流学习社区交流群"></a>
-               <!-- <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=65dbbdbed765e804e2412503f0ee8dde17d631754db33b7c7047af5c233618e2"><img border="0" src="{{_web.url}}{{theme_url}}/common/images/common/group.png" alt="交流学习社区交流群" title="交流学习社区交流群"></a>-->
+                <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=65dbbdbed765e804e2412503f0ee8dde17d631754db33b7c7047af5c233618e2"><img border="0" src="{{_web.url}}{{theme_url}}/common/images/common/group.png" alt="sau交流学习社区交流群" title="sau交流学习社区交流群"></a>
             </div>
         </div>
     </ul>
+    <!--adver-->
+    <div class="img_viewbox"><a class="imgUrl" href="https://sugs.suning.com/outstation.htm?p=VVRTQFIIBF1ARxQ5KSlnVRFKUEQAECs7MylaVnY2JSRbSVINYjkoIhwUGBYfEhEcYhNaIhQISRRxUR1CVBAKH1hRUEZPCEoMHRYSbntwahhABgkHEAZ1dnorAA4vIi1oEgYIGDwiej1FSwc"><img style="width: 100%;" src='http://file.suning.cn/advert/img/channel/300_250/img_1450772083715.jpg'/></a></div>
+    <!--adver-->
 </div>
+
 <div class="tab main-right" id="lp_right_select">
     <div class="tab-top">
         <ul class="hd" id="tb">
@@ -32,8 +35,8 @@
             <ul>
                 {% article data = "popularList",limit= "5",type="hot"%} {% for item in popularList %}
                 <li><a href="/page/{{item.id}}.html" target="_blank" title="{{item.title}}">
-										{{item.title}}
-									</a></li>
+                    {{item.title}}
+                </a></li>
                 {% endfor %}
             </ul>
         </div>
@@ -67,8 +70,8 @@
         {% article data = "picrecomList",limit= "5",flag="topicrecom" %} {% for item in picrecomList %}
         <li>
             <a href="/page/{{item.id}}.html"><img src="{%if item.picurl==''%}static/common/images/common/default.jpg{%else%}{{item.picurl}}{%endif%}" title="{{item.title}}"><b title="{{item.title}}">
-								{{item.title}}
-						</b></a>
+                {{item.title}}
+            </b></a>
             <p>
                 <span class="tulanum"><a href="javascript:void(0);">{{item.author}}</a></span>
                 <span class="tutime">{{think.datetime(item.createtime,"YYYY-MM-DD")}}</span>
@@ -81,7 +84,8 @@
     <h3><span><a href="/links.html">申请友情链接</a></span>友情链接</h3>
     <ul>
         {% for item in linksList %}
-        <li><a href="{{item.link}}" target="_blank">{{item.domain}}</a></li>
+        <li><a el="nofollow" href="{{item.link}}" target="_blank">{{item.domain}}</a></li>
         {%endfor%}
     </ul>
 </div>
+<div id="hm_t_124209"></div>

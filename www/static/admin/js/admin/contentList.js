@@ -1,5 +1,5 @@
 /**
- * Created by livi on 16/4/19.
+ * Created by saucxs on 16/4/19.
  */
     //文章搜索
         $("#search_article").on('click',function(){

@@ -32,6 +32,12 @@ export default class extends think.model.base {
     getArticleList(where){
         return this.model("article").where(where).order("createtime DESC").limit(5).select();
     }
+
+    //返回文章列表
+    getArticleListTwenty(where){
+        return this.model("article").where(where).order("createtime DESC").limit(20).select();
+    }
+
     //返回点击排行列表
     getPopularList(where){
         return this.model("article").where(where).order("view DESC").limit(5).select();

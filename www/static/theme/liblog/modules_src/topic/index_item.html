@@ -1,7 +1,7 @@
 {% extends "../topic/inc/topic_base.html" %}
 {% block head %}
     <title>{{title}}-{{_web.sitename}}</title>
-    <meta name="keywords" content="{{_web.keywords}}">
+    <meta name="keywords" content="{{title}}-{{_web.sitename}}">
     <meta name="description" content="{{_web.description}}">
     {{ super() }}
     <link rel="stylesheet" type="text/css" href="{{_web.url}}{{theme_url}}/vendors/wangeditor/css/wangEditor.min.css">
@@ -89,6 +89,11 @@
          </div>
          <span class="span-success" id="savetopic">提交</span>
       </div>
+    {%endif%}
+    {% if islogin==0 %}
+        <a href="/topic/index/comment.html">
+            <span class="span-success">发布评论</span>
+        </a>
     {%endif%}
 {% endblock %}
 
