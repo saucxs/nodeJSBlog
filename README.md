@@ -99,7 +99,7 @@ v1.0
 
 ### 三、系统截图
 #### 3.1 无线端
-![image](./screen-pic.png)
+![image](./screen-pic.jpg)
 #### 3.1 PC端
 ![image](./screen-pic-2.png)
 
