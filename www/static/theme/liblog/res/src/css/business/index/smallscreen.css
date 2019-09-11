@@ -1,10 +1,37 @@
 article.mainbd{width: 100%;}
+.navbar-nav>li>.dropdown-menu{left: -112px;}
+.tabbable-panel .itemlist li a{max-width: 57%}
+.row{margin:0;padding: 0}
+.container{ padding: 0;}
+.footer{padding: 20px 0px}
 .head-region .profile{display: none}
 .l_box{width: 100%}
 .r_box.f_r{width: 98%;margin-left: 0px;}
 .f_r{float: left}
-.site-navbar { margin-left: 5%; margin-top: 3%;}
+/*.site-navbar { margin-left: 5%; margin-top: 3%;}*/
+.login-main{padding-top: 0px!important;}
+#login .well{padding: 0}
+.site-navbar { margin-top: 0;}
+.search-content{ padding: 0px 15px}
+.site-search-form{ margin-top: 0}
 .site-navbar li {font-size: 12px;line-height: 23px;}
+.logo-region{ padding: 0}
+.site-navbar a{padding: 0px 13px}
+.main-left{padding: 0}
+.menu-special{margin-top: 6px}
+.menu-special-home{margin: 10px 0px}
+.right-padding{padding: 0}
+.main-left > .topnews .cell{padding: 10px 0px}
+.main-left .article .topnews .cell{padding: 10px 0px 10px 10px}
+.menu-content{ padding-left: 0;padding-right: 0}
+.login-region{margin-top: 10px}
+.author-box{display: flex;justify-content: center;align-items: center}
+.author-box{ padding: 10px 0px}
+.author-name-box, .system-data-box, .icon-box{ display: none;}
+.flex-box-spe{display: block;width: 70%;}
+.flex-box-spe .author-name-box, .flex-box-spe .system-data-box, .flex-box-spe .icon-box{ display: block;}
+.icon-box a{display: inline-block}
+.author-box .author-image{ width: 30%;}
 .topmenu li{display: none}
 .blogs ul{margin-left: 2%;}
 .activity .blogs{padding: 0px;}
@@ -15,12 +42,13 @@ article.mainbd{width: 100%;}
 .footer .container p{line-height: 20px;}
 .markdown-body .article-header h1{font-size: 14px;}
 .breadcrumb .active{display: none;}
-.topmenu{float: left}
+/*.topmenu{float: left}*/
 .author{margin: 0px;}
 .author.second{float:left;}
 .topnews.recom .blogs ul{width: 98%}
-.mainbd .left{display: none}
+.mainbd .left{display: block}
 .right.markdown-body{width: 100%;max-width: 100%;margin-left: 0px;line-height: 30px;}
 .navto-search{display: none}
 .footer_logo{display: none;}
 .footer_right{width: 100%;}
+

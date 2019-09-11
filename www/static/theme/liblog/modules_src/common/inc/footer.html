@@ -1,5 +1,66 @@
 <a id="back-top" class="w-gotop" href="javascript:void(0)" alt="返回顶部" title="返回顶部"></a>
 
+<div id="wechat" class="chat-robot" alt="微信群" title="微信群">
+    <img src="https://www.mwcxs.top/static/staticImage/wechat/website.png" alt="微信群">
+</div>
+<div id="wechatIcon">
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#iconweixinerweima"></use>
+    </svg>
+</div>
+
+<a id="chat-robot" class="chat-robot" href="javascript:void(0)" alt="聊天机器人" title="聊天机器人">
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#iconrobot"></use>
+    </svg>
+</a>
+<div class="chat-room">
+    <header class="head-box">
+        <span class="chat-room-title">saucxs聊天机器人</span>
+        <a href="https://github.com/saucxs/happy-chat-web" target="_blank">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#iconrobot"></use>
+            </svg>
+        </a>
+    </header>
+    <section class="section">
+        <div class="section-box">
+            <a class="section-icon" href="https://github.com/saucxs/happy-chat-web" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#iconrobot"></use>
+                </svg>
+            </a>
+            <div>
+                <div>
+                    <span class="robot-name">saucxs</span>
+                    <span class="robot-time"></span>
+                </div>
+                <div class="word-content">hi ,欢迎来到sau交流学习社区，欢迎与我聊天，问我问题哦！</div>
+            </div>
+        </div>
+
+    </section>
+    <chatfooter class="footer-box">
+        <span><input maxlength="60" class="input-box" placeholder="请输入内容..." /></span>
+        <span><button class="button-box" id="send-message">发送</button></span>
+    </chatfooter>
+</div>
+
+<!--浏览器判断-->
+<div id="mask"></div>
+<div id="upgradeContent" class="upgrade-content">
+    <div id="big-title" class="big-title">您正在使用的浏览器是<span></span>，不在支持范围内！</div>
+    <div class="sub-title">为了您的正常使用与展示，<font color="red">推荐使用Chrome浏览器68以上版本</font></div>
+    <div class="sub-title sub-title-2">支持浏览器：</div>
+    <div class="support-browser">
+        <div class="box"><img src="http://static.chengxinsong.cn/image/checkbrower/ic_ex_chrome.gif" /><a href="http://www.google.cn/chrome/browser" target="_blank" style="color:red;">Chrome浏览器最新版</a></div>
+        <div class="box"><img src="http://static.chengxinsong.cn/image/checkbrower/ic_ex_hh.gif" />火狐浏览器最新版</div>
+        <div class="box"><img src="http://static.chengxinsong.cn/image/checkbrower/safari.gif" />Safari浏览器最新版</div>
+        <div class="box"><img src="http://static.chengxinsong.cn/image/checkbrower/edge.gif" />Edge浏览器最新版</div>
+        <div class="box"><img src="http://static.chengxinsong.cn/image/checkbrower/ic_ex_ie.gif" />IE浏览器10，11</div>
+    </div>
+</div>
+
 <footer class="footer" style="background: {{_web.festivalBgColor}}">
     <div class="footer_logo col-lg-3 col-md-3 col-sm-12">
         <div class="logo">
@@ -41,9 +102,6 @@
                 <!--统计end-->
             </p>
             <p >
-                <!--<span>-->
-                <!--版权所有 © <a href="{{_web.homeurl}}">{{_web.sitename}}</a>-->
-                <!--</span>-->
                 <span>
                     {{_web.copyright}} © <a href="{{_web.homeurl}}">{{_web.sitename}}</a>
                 </span>
@@ -51,8 +109,8 @@
         </div>
     </div>
     <div style="clear:both"></div>
+    <input class="blackWhiteBg" style="display: none" value="{{_web.blackWhiteBg}}">
 </footer>
-
 <script src="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}js/widget/jquery/jquery-1.9.1.min.js"></script>
 <!-- build:js -->
 <script src="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}js/business/pagecommon/footer.js"></script>
@@ -62,6 +120,7 @@
 <script type="text/javascript">
     $('.timeago').timeago();
 </script>
+
 <!--访客统计代码-->
 {{_web.tongji|safe}}
 <!--访客统计代码-->
@@ -69,4 +128,15 @@
 <!--百度自动推送-->
 {{_web.baidu_tuisong|safe}}
 <!--百度自动推送-->
+<!--icon-->
+<script type="text/javascript" src="//at.alicdn.com/t/font_1080395_5siwsplqr7f.js"></script>
+<script async>
+    window.onload = function () {
+        var blackWhiteFlag =  $('.blackWhiteBg').val()
+        var htmlObj = document.documentElement
+        if(blackWhiteFlag == 1){
+            htmlObj.style.cssText="filter:progid:DXImageTransForm.Microsoft.BasicImage(grayscale=1);-webkit-filter: saturate(0);";
+        }
+    }
+</script>
 

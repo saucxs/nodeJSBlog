@@ -1,15 +1,15 @@
 <div class="cloud main-right qqregion">
-    <h3 class="widget_titx">
-        <span>交流咨询</span>
+    <div class="h2" style="border-bottom-color: {{_web.festivalBgColor}}">
         <span class="github-region">
-			<a href="https://github.com/saucxs/nodeJSBlog">
-				<img src="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/index/images/github.png" alt=""class="github" />
-			</a>
-			<a href="https://github.com/saucxs/nodeJSBlog/stargazers"  target="_blank" class="count"><b></b><i></i>
-				<span id="gitcount"></span>
-        </a>
+            <a href="https://github.com/saucxs/nodeJSBlog">
+                <img src="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/index/images/github.png" alt=""class="github" />
+            </a>
+            <a href="https://github.com/saucxs/nodeJSBlog/stargazers"  target="_blank" class="count"><b></b><i></i>
+                <span id="gitcount"></span>
+            </a>
         </span>
-    </h3>
+        交流咨询
+    </div>
     <ul class="qqs">
         <div>官方QQ群<br/>群号<span>663940201,欢迎加入！</span>
             <div class="qqlist">
@@ -17,6 +17,17 @@
             </div>
         </div>
     </ul>
+    <hr>
+    <div class="gongzhonghao">
+        <div class="gongzhonghao-box">
+            <img src="https://www.mwcxs.top/static/staticImage/wechat/wechat1.jpg" alt="微信群">
+            <div class="font-style">欢迎加入微信群</div>
+        </div>
+        <div class="gongzhonghao-box">
+            <img src="https://www.mwcxs.top/static/staticImage/wechat/gongzhonghao.jpg" alt="微信公众号">
+            <div class="font-style">欢迎关注微信公众号</div>
+        </div>
+    </div>
     <!--adver-->
     <div class="img_viewbox"><a class="imgUrl" href="https://sugs.suning.com/outstation.htm?p=VVRTQFIIBF1ARxQ5KSlnVRFKUEQAECs7MylaVnY2JSRbSVINYjkoIhwUGBYfEhEcYhNaIhQISRRxUR1CVBAKH1hRUEZPCEoMHRYSbntwahhABgkHEAZ1dnorAA4vIi1oEgYIGDwiej1FSwc"><img style="width: 100%;" src='http://file.suning.cn/advert/img/channel/300_250/img_1450772083715.jpg'/></a></div>
     <!--adver-->
@@ -35,8 +46,8 @@
             <ul>
                 {% article data = "popularList",limit= "5",type="hot"%} {% for item in popularList %}
                 <li><a href="/page/{{item.id}}.html" target="_blank" title="{{item.title}}">
-                    {{item.title}}
-                </a></li>
+										{{item.title}}
+									</a></li>
                 {% endfor %}
             </ul>
         </div>
@@ -57,7 +68,7 @@
     </div>
 </div>
 <div class="cloud main-right">
-    <h3>标签云</h3>
+    <h3 class="h2" style="border-bottom-color: {{_web.festivalBgColor}}">标签云</h3>
     <ul>
         {% for item in tagList %}
         <li><a href="/category/{{item.id}}.html" target="_blank">{{item.tagname}}</a></li>
@@ -65,27 +76,32 @@
     </ul>
 </div>
 <div class="tuwen main-right">
-    <h3>图文推荐</h3>
+    <h3 class="h2" style="border-bottom-color: {{_web.festivalBgColor}}">图文推荐</h3>
     <ul>
         {% article data = "picrecomList",limit= "5",flag="topicrecom" %} {% for item in picrecomList %}
         <li>
-            <a href="/page/{{item.id}}.html"><img src="{%if item.picurl==''%}static/common/images/common/default.jpg{%else%}{{item.picurl}}{%endif%}" title="{{item.title}}"><b title="{{item.title}}">
-                {{item.title}}
-            </b></a>
+            <a href="/page/{{item.id}}.html"><img src="{%if item.picurl==''%} {{_web.url}}{{theme_url}}/common/images/common/default.jpg{%else%}{{item.picurl}}{%endif%}" title="{{item.title}}"><b title="{{item.title}}">
+								{{item.title}}
+						</b></a>
             <p>
                 <span class="tulanum"><a href="javascript:void(0);">{{item.author}}</a></span>
-                <span class="tutime">{{think.datetime(item.createtime,"YYYY-MM-DD")}}</span>
+                <span class="tutime">{{think.datetime(item.createtime,"YYYY-MM-DD HH:mm:ss")}}</span>
             </p>
         </li>
         {% endfor %}
     </ul>
 </div>
 <div class="links main-right">
-    <h3><span><a href="/links.html">申请友情链接</a></span>友情链接</h3>
+    <div class="h2" style="border-bottom-color: {{_web.festivalBgColor}}">
+        <strong>友情链接</strong>
+        <span>
+            <a href="/links.html" target="_blank">申请友情链接</a>
+        </span>
+    </div>
+    <!--<h3><span><a href="/links.html">申请友情链接</a></span>友情链接</h3>-->
     <ul>
         {% for item in linksList %}
         <li><a el="nofollow" href="{{item.link}}" target="_blank">{{item.domain}}</a></li>
         {%endfor%}
     </ul>
 </div>
-<div id="hm_t_124209"></div>

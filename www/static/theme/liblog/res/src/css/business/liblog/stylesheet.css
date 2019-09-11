@@ -56,12 +56,12 @@ a {
 .page-header {
   color: #fff;
   text-align: center;
-  background-color: #159957;
-  background-image: linear-gradient(120deg, #155799, #159957); }
+  background-color: #e8ce13;
+  background-image: linear-gradient(120deg, #155799, #e8ce13); }
 
 @media screen and (min-width: 64em) {
   .page-header {
-    padding: 5rem 6rem; } }
+    padding: 2rem 15rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .page-header {

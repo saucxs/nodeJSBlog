@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     {% block head %}
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-      <meta name="baidu-site-verification" content="MoFwmO6WMW" />
-      <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="shortcut icon" href="{{_web.url}}{{theme_url}}/common/images/common/favicon.ico" type="image/x-icon">
-      <link href="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/index/layout.css" rel="stylesheet">
-      <link href="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/index/index.css" rel="stylesheet">
-      <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-      <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/index/smallscreen.css" />
-      <link rel="stylesheet" href="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/doc/doc.css" media="screen" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{_web.url}}{{theme_url}}/common/images/common/favicon.ico" type="image/x-icon">
+    <link href="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/index/layout.css" rel="stylesheet">
+    <link href="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/index/index.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/index/smallscreen.css" />
+    <link rel="stylesheet" href="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/doc/doc.css" media="screen" charset="utf-8">
     {% endblock %}
     <!--[if lt IE 9]>
       <script src="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}js/widget/html5/html5.min.js"></script>
@@ -22,14 +21,16 @@
 <body>
   {% include "../../common/inc/menu.html" %}
     <article class="container">
-        <nav class="breadcrumb">
-          <a href="/">首页</a>
-          <a href="/doc.html"><span class="c-gray en">&gt;</span>文档</a>
-          <span class="c-gray en">&gt;</span>{% block doc_title %}{% endblock %}
+        <nav class="breadcrumb row">
+            <div class="col-md-12">
+                <a href="/">首页</a>
+                <a href="/doc.html"><span class="c-gray en">&gt;</span>文档</a>
+                <span class="c-gray en">&gt;</span>{% block doc_title %}{% endblock %}
+            </div>
         </nav>
         <div class="article doc-main">
           <div class="content_box">
-            <div class="body body_new" style="margin-bottom: 40px;">
+            <div class="body body_new row" style="margin-bottom: 40px;">
               <div class="col-md-3">
                 <!--左部导航begin-->
                   <div class="left_nav">

@@ -8,10 +8,13 @@
 
 {% block content %}
     <header class="article-header">
-        <h1 class="article-title">关于本站</h1>
+        <h1 class="article-title">关于我们</h1>
     </header>
     <article class="article-content">
-        <div class="right-main no-border">
+        <div class="right-main no-border" style="line-height: 30px;">
+            <h4 style="text-indent:2em;color: #048DDC;">{{_web.aboutMeFirst}}</h4>
+            <h4 style="text-indent:2em;color: #048DDC;">{{_web.aboutMeSecond}}</h4>
+            <h4 style="text-indent:2em;color: #048DDC;">{{_web.aboutMeThird}}</h4>
         </div>
     </article>
 {% endblock %}

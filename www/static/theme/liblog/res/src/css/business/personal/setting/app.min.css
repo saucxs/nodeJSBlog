@@ -14,48 +14,48 @@ body>.m-wrap {
 .clearfix:after {
 	clear:both
 }
-.w-link.link-black:hover {
-	opacity:.9;
-	filter:alpha(opacity=90)
-}
-.w-search {
-	display:inline-block;
-	position:relative
-}
-.w-search .search-btn {
-	line-height:100%;
-	cursor:pointer;
-	position:absolute;
-	top:50%;
-	height:20px;
-	width:20px;
-	margin-top:-10px;
-	border:0;
-	background-color:#fff;
-	right:3px;
-	background-color:transparent
-}
-.w-search .search-enter.w-text {
-	padding-right:36px!important
-}
-.w-search .search-enter.w-text .text-input {
-	padding-right:24px
-}
-.w-search .search-btn.btn-loading {
-	background:url(../image/12.gif) no-repeat 50% 50%;
-	cursor:default;
-	line-height:9;
-	overflow:hidden
-}
-.w-search .search-btn.btn-loading:before {
-	content:''
-}
-.w-search .form-loading {
-	display:none
-}
-.w-search.search-block {
-	display:block
-}
+/*.w-link.link-black:hover {*/
+	/*opacity:.9;*/
+	/*filter:alpha(opacity=90)*/
+/*}*/
+/*.w-search {*/
+	/*display:inline-block;*/
+	/*position:relative*/
+/*}*/
+/*.w-search .search-btn {*/
+	/*line-height:100%;*/
+	/*cursor:pointer;*/
+	/*position:absolute;*/
+	/*top:50%;*/
+	/*height:20px;*/
+	/*width:20px;*/
+	/*margin-top:-10px;*/
+	/*border:0;*/
+	/*background-color:#fff;*/
+	/*right:3px;*/
+	/*background-color:transparent*/
+/*}*/
+/*.w-search .search-enter.w-text {*/
+	/*padding-right:36px!important*/
+/*}*/
+/*.w-search .search-enter.w-text .text-input {*/
+	/*padding-right:24px*/
+/*}*/
+/*.w-search .search-btn.btn-loading {*/
+	/*background:url(../image/12.gif) no-repeat 50% 50%;*/
+	/*cursor:default;*/
+	/*line-height:9;*/
+	/*overflow:hidden*/
+/*}*/
+/*.w-search .search-btn.btn-loading:before {*/
+	/*content:''*/
+/*}*/
+/*.w-search .form-loading {*/
+	/*display:none*/
+/*}*/
+/*.w-search.search-block {*/
+	/*display:block*/
+/*}*/
 
 .w-btn {
 	display:inline-block;
@@ -1174,7 +1174,7 @@ body>.m-wrap {
 }
 .m-page {
 	position:relative;
-	padding-bottom:82px
+	/*padding-bottom:82px*/
 }
 .m-page .page-head {
 	zoom:1
@@ -1215,14 +1215,15 @@ body>.m-wrap {
 	display:none
 }
 .m-page .page-body {
-	padding-top: 79px;
+	/*padding-top: 94px;*/
+	padding: 10px 20px;
 }
 .m-page .page-body .page-left {
-	position:fixed;
-	overflow:auto;
-	top: 80px;
-	bottom:0;
-	width:199px;
+	/*position:fixed;*/
+	/*overflow:auto;*/
+	/*top: 94px;*/
+	/*bottom:0;*/
+	/*width:199px;*/
 	background-color:#f5f5f5;
 	border-right:1px solid #eaeaea;
 }
@@ -1272,7 +1273,7 @@ body>.m-wrap {
 }
 .m-page .page-body .page-right {
 	padding:15px 0 15px 24px;
-	margin-left:200px
+	/*margin-left:200px*/
 }
 .m-page.page-member .page-head .right .m-navg {
 	margin-right:-12px
@@ -1304,11 +1305,10 @@ body>.m-wrap {
 	text-overflow:ellipsis
 }
 .m-page.page-member .page-head,.m-page.page-chancel .page-head {
-	position:fixed;
+	position:relative;
 	left:0;
 	right:0;
 	top:0;
-	height:54px;
 	z-index:100;
 	border-bottom:1px solid #ddd;
 	background-color:#fff
@@ -1400,7 +1400,7 @@ body>.m-wrap {
 }
 .m-foot {
 	position:relative;
-	margin-top:-82px;
+	/*margin-top:-82px;*/
 	overflow:hidden
 }
 .m-manual {
@@ -3017,7 +3017,6 @@ body>.m-wrap {
 	position:relative
 }
 .m-box .box-head {
-	border-bottom:1px solid #DDDDD9;
 	height:40px
 }
 .m-box .box-head .box-title {
@@ -5956,14 +5955,14 @@ body>.m-wrap {
 .w-text .think-placeholder {
 	position:static!important
 }
-.container {
-	width:1188px;
-	margin:0 auto
-}
-@media screen and (max-width:1238px) {
-	.container {
-	width:782px
-}
+/*.container {*/
+	/*width:89%;*/
+	/*margin:0 auto*/
+/*}*/
+/*@media screen and (max-width:1238px) {*/
+	/*.container {*/
+	/*width:782px*/
+/*}*/
 .m-price .functional,.m-price .price-cols {
 	width:100%
 }
@@ -5996,10 +5995,10 @@ body>.m-wrap {
 .m-reader .reader-right {
 	width:38%
 }
-}@media screen and (max-width:830px) {
-	.container {
-	width:579px
-}
+/*}@media screen and (max-width:830px) {*/
+	/*.container {*/
+	/*width:579px*/
+/*}*/
 .m-price .price-cols .item {
 	width:100%;
 	float:none
@@ -6075,10 +6074,11 @@ body>.m-wrap {
 	float:none;
 	margin-top:20px
 }
-}@media screen and (max-width:600px) {
-	.container {
-	width:376px
 }
+/*@media screen and (max-width:600px) {*/
+	/*.container {*/
+	/*width:376px*/
+/*}*/
 .w-banner .banner-box .banner-left {
 	float:none;
 	text-align:center;

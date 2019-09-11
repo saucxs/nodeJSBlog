@@ -33,18 +33,19 @@
                                           <span class="input-group-addon">
                                               <i class="glyphicon glyphicon-envelope"></i>
                                           </span>
-                                          <input id="email" type="text" class="form-control" name="email" validate="required|email|checkemail" placeholder="邮箱" {{uinfo.email}}>
+                                          <input id="email" type="text" class="form-control" name="email" validate="required|email|checkemail" placeholder="邮箱" value="{{uinfo.email}}">
                                           <input type="hidden" id="csrf" value="{{csrf}}">
-                                          </div><i class="form-control-feedback" data-bv-icon-for="email" style="display: none; top: 0px; z-index: 100;"></i>
+                                          </div>
+                                          <i class="form-control-feedback" data-bv-icon-for="email" style="display: none; top: 0px; z-index: 100;"></i>
                                           <small class="help-block alert alert-danger" style="display: none; margin-bottom: 0px; margin-top: 10px;">用户名</small></div>
                                   </div>
-                                  <div class="form-group has-feedback register-item" style="">
+                                  <div class="form-group has-feedback register-item">
                                       <div class="col-sm-12">
                                           <div class="input-group">
                                           <span class="input-group-addon">
                                               <i class="glyphicon glyphicon-user"></i>
                                           </span>
-                                          <input id="name" type="text" class="form-control" validate="required|user|isok" placeholder="用户名" {{uinfo.name}}>
+                                          <input id="name" type="text" class="form-control" validate="required|user|isok" placeholder="用户名" value="{{uinfo.name}}">
                                           </div><i class="form-control-feedback" data-bv-icon-for="email" style="display: none; top: 0px; z-index: 100;"></i>
                                           <small class="help-block alert alert-danger" style="display: none; margin-bottom: 0px; margin-top: 10px;">用户名</small></div>
                                   </div>

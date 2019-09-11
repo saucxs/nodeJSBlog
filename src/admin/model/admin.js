@@ -66,6 +66,14 @@ export default class extends think.model.base {
       }).where(where).page(page,pagesize).order("createtime DESC").select();
     }
 
+    //获取资讯记录
+    getArticleNewsJoinRecord(where,page,pagesize){
+        return this.model("article").field("*,li_article.id as aid").join({
+            tags: {on: "tag, id"},
+            item: {on: ["item", "id"]},
+        }).where(where).page(page,pagesize).order("createtime DESC").select();
+    }
+
     //获取草稿箱关联表记录
     getDraftJoinRecord(join,where,page,pagesize){
       return this.model("article").field("*,li_article.id as aid").join(join).where(where).page(page,pagesize).order("createtime DESC").select();

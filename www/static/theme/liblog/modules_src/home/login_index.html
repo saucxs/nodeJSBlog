@@ -23,14 +23,14 @@
                     <div id="loginForm" class="form-horizontal bv-form" role="form">
                       <div class="register-item">
                           <div class="input-group">
-                            <span class="input-group-addon glyphicon glyphicon-user notop" id="basic-addon1"></span>
+                            <span class="input-group-addon glyphicon glyphicon-user notop"></span>
                             <input id="email" type="text" class="form-control" name="email" validate="required|email" placeholder="邮箱">
                             <input type="hidden" id="csrf" value="{{csrf}}">
                           </div>
                       </div>
                       <div class="register-item">
                           <div class="input-group">
-                            <span class="input-group-addon glyphicon glyphicon-user notop" id="basic-addon1"></span>
+                            <span class="input-group-addon glyphicon glyphicon-lock notop"></span>
                             <input type="password" class="form-control" id="password" validate="required" name="password" placeholder="密码">
                           </div>
                       </div>
@@ -53,11 +53,26 @@
                                   注册</a>
                           </div>
                           <div class="col-sm-6 col-xs-6">
-                              <a href="#" class="btn btn-default btn-block">
+                              <a href="/login/forgetpassword.html" class="btn btn-default btn-block">
                                   <i class="glyphicon glyphicon-question-sign"></i>
                                   忘记密码</a>
                           </div>
                       </div>
+                        <div class="text-muted text-center more-login-area">
+                            <span class="more-login-words">更多登录方式</span>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-1 col-xs-1">
+                                <a href="https://github.com/login/oauth/authorize?client_id=d55f9480603a48f24c09&scope=user,public_repo">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </div>
+                            <!--<div class="col-sm-1 col-xs-1">-->
+                                <!--<a href="https://graph.qq.com/oauth2.0/authorize?redirect_uri=https://www.mwcxs.top/login/qqlogin&response_type=code&client_id=1107967694">-->
+                                    <!--<i class="fa fa-qq fa-4"></i>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -66,25 +81,25 @@
       <div class="col-md-6" style="padding-right:0px;">
         <div id="oAuth">
             <div class="page-header">
-                <h3>欢迎来到交流学习社区交流群</h3>
+                <h3>欢迎来到{{_web.siteNickName}}</h3>
                 <p>在这里，你可以充实自己，认识更多的朋友！</p>
             </div>
             <div class="col-sm-12 social-buttons" style="padding:0px;">
                 <img src="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/index/images/biye.jpg" style="width: 100%;"/>
 
-                <!--<a href="https://graph.qq.com/oauth2.0/authorize?redirect_uri=http://blog.mwcxs.top/login/qqlogin&response_type=code&client_id=101334443">
-                  <span type="button" data-type="qq" class="btn btn-block btn-social btn-google-plus">
-                      <i class="fa fa-qq fa-4"></i> QQ 登录
-                  </span>
-                </a>-->
-                <!-- <span type="button" data-type="sina" class="btn btn-block btn-social btn-google-plus">
-                    <i class="iconfont icon-weibo"></i> 微博登录
-                </span> -->
-               <!-- <a href="https://github.com/login/oauth/authorize?client_id=d55f9480603a48f24c09&scope=user,public_repo">
-                  <span type="button" data-type="github" class="btn btn-block btn-social btn-github">
-                      <i class="fa fa-github"></i> GitHub 登录
-                  </span>
-                </a>-->
+                <!--<a href="https://graph.qq.com/oauth2.0/authorize?redirect_uri=http://blog.mwcxs.top/login/qqlogin&response_type=code&client_id=101334443">-->
+                  <!--<span type="button" data-type="qq" class="btn btn-block btn-social btn-google-plus">-->
+                      <!--<i class="fa fa-qq fa-4"></i> QQ 登录-->
+                  <!--</span>-->
+                <!--</a>-->
+                 <!--<span type="button" data-type="sina" class="btn btn-block btn-social btn-google-plus">-->
+                    <!--<i class="iconfont icon-weibo"></i> 微博登录-->
+                <!--</span>-->
+                <!--<a href="https://github.com/login/oauth/authorize?client_id=d55f9480603a48f24c09&scope=user,public_repo">-->
+                  <!--<span type="button" data-type="github" class="btn btn-block btn-social btn-github">-->
+                      <!--<i class="fa fa-github"></i> GitHub 登录-->
+                  <!--</span>-->
+                <!--</a>-->
                <!-- <div class="page-header">
                     <p>加入交流群，与更多一线开发者互动。</p>
                 </div>-->

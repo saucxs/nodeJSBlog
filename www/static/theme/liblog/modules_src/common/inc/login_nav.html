@@ -1,33 +1,56 @@
-<header class="head-region">
+<header class="head-region" style="background: {{_web.festivalBgColor}}">
     <div class="container">
-      <div class="row">
-          <div class="col-md-5 col-md-offset-7">
-            {% include "../inc/top.html" %}
-          </div>
-      </div>
-      <div class="row">
-      <div class="col-md-2 logo-region">
-            <div class="logo">
-                <a href="/" title="{{_web.sitename}}">
-                    <img  src="{{_web.url}}{{theme_url}}/common/images/common/logo.png" alt="<span交流学习社区">
+        {% if (_web.festivalContent) %}
+        <div class="row">
+            <div class="col-md-12 festival-style" style="color: {{_web.festivalFontColor}}">
+                {{_web.festivalContent}}
+            </div>
+        </div>
+        {% endif %}
+        <div class="row">
+            <div class="col-md-6 margin-top-bottom">
+                <p class="microsoft marquee">
+                    <a style="color: {{_web.festivalFontColor}}" href="{{_headerNotice.url}}" title="{{_headerNotice.content}}">{{_headerNotice.content}}</a>
+                </p>
+            </div>
+            <div class="col-md-6 margin-top-bottom">
+                {% include "../inc/top.html" %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 logo-region">
+                <div class="logo">
+                    <a href="{{_web.homeurl}}" title="{{_web.sitename}}">
+                        {% if (_web.festivalContent) %}
+                        <img src="{{_web.url}}{{theme_url}}/common/images/common/logo_64_64_white.png" alt="{{_web.sitename}}">
+                        {% else %}
+                        <img src="{{_web.url}}{{theme_url}}/common/images/common/logo.png" alt="{{_web.sitename}}">
+                        {% endif %}
+                    </a>
+                </div>
+                <a href="{{_web.homeurl}}" title="{{_web.sitename}}">
+                    <span class="logo-font" style="color: {{_web.festivalFontColor}};">{{_web.siteNickName}}</span>
                 </a>
             </div>
-          <span  class="logo-font">
-              交流学习社区
-          </span>
+            <div class="col-md-4 menu-content menu-special-home clearfix">
+                <ul class="site-nav site-navbar site-menu">
+                    {% for item in navList %}
+                    <li class="item">
+                        <a href="{{ item.url }}" target="{%if(item.target=='0') %}_self{%else%}_blank{% endif %}">{{ item.menuname }}</a>
+                        {% if (item.menuname=="社区") %}
+                        <i class="newicon"></i>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-3 menu-special-home">
+                <form method="get" class="site-search-form" action="/search?keyword=" style="padding: 0;">
+                    <input class="search-input" name="keyword" type="text" placeholder="search..." style="height: 30px;font-size: 12px;">
+                    <button class="search-btn" type="submit" style="height: 30px;width: 20%"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
         </div>
-          <div class="col-md-8">
-            <ul class="site-nav site-navbar">
-               {% for item in navList %}
-                  <li class="item">
-                      <a href="{{item.url}}"> {{item.menuname}}</a>
-                      {% if item.menuname=="社区" %}
-                          <i class="newicon"></i>
-                      {%endif%}
-                  </li>
-               {%endfor%}
-            </ul>
-          </div>
-      </div>
     </div>
 </header>
+

@@ -10,6 +10,10 @@ export default class extends think.controller.base {
         let _web = await this.getConfig();
         this.assign('_web', _web);
 
+        /*home页的author*/
+        let _authorData = await this.getAuthorConfig();
+        this.assign('_authorData', _authorData);
+
         /*home页的slider*/
         let _homeImageData = await this.getHomeImageConfig();
         this.assign('_homeImageData', _homeImageData);
@@ -65,6 +69,22 @@ export default class extends think.controller.base {
         let sysdata = await this.model("home").findOne('system');
         this.assign('_web', sysdata);
         return sysdata;
+    }
+
+    async getAuthorConfig() {
+        let _authorData = await this.model("home").findOne('author');
+        let articleList = await this.model("home").findAll('article');
+        _authorData.articleNum = articleList.length;
+        let topicList = await this.model("home").findAll('topic')
+        _authorData.topicNum = topicList.length;
+        let userList = await this.model("home").findAll('user')
+        _authorData.userNum = userList.length;
+        let tagList = await this.model("home").findAll('tags')
+        _authorData.tagNum = tagList.length;
+        let topicItemList = await this.model("home").findAll('topic_item')
+        _authorData.topicItemNum = topicItemList.length;
+        this.assign('_authorData', _authorData);
+        return _authorData;
     }
 
     async getHomeImageConfig() {

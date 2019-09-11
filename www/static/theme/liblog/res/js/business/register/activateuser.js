@@ -1,0 +1,1 @@
+$(function(){var e={code:$("#code").val(),__CSRF__:$("#csrf").val()};$.ajax({url:"/home/register/updateactivateemail",data:e,type:"POST",success:function(e){0===e.errno?(alert(e.errmsg),window.location.href="/personal/@"+e.username+".html"):alert(e.errmsg)}})});

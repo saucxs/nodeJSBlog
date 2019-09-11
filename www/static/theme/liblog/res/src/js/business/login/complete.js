@@ -30,9 +30,10 @@
                   type:'POST',
                   success:function(json){
                     if(json.errno===0){
+                        alert("成功完善个人信息，完善邮件发送到您注册邮箱，请查收！");
                         window.location.href="/login";
                     }else{
-                        // alert(json.errmsg);
+                        alert(json.errmsg);
                     }
                   }
               })

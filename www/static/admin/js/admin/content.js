@@ -1,5 +1,5 @@
 /**
- * Created by saucxs on 16/4/19.
+ * Created by saucxs on 17/10/19.
  */
 $('.add-img-btn2 input[type="file"]').on('change', function() {
     var $this = $(this);
@@ -90,6 +90,7 @@ $(function() {
                         window.open("/preview/" + json.data.id, "_blank");
                     }
                 });
+
             } else {
                 //更新文章状态
                 dosubmit('/admin/content/doadd/', 0, function(json) {
@@ -97,7 +98,6 @@ $(function() {
                         window.open("/preview/" + pid, "_blank");
                     }
                 })
-
             }
         })
         //发布文章
@@ -115,6 +115,7 @@ $(function() {
                         alert(json.errmsg)
                     }
                 })
+
             } else {
                 //更新文章状态
                 dosubmit('/admin/content/doadd/', 1, function(json) {

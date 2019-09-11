@@ -1,19 +1,19 @@
 <div class="tabbable-panel">
     <div class="tabbable-line">
-        <ul class="nav nav-tabs " id="nav-tabs">
+        <ul class="nav nav-tabs " id="nav-tabs" style="display: block">
             <li class="" pid="paneOne">
                 <a href="javascript:void(0);">{{isselftag}}收藏</a>
             </li>
-            <li class="" pid="paneTwo">
+            <li class="active" pid="paneTwo">
                 <a href="javascript:void(0);">{{isselftag}}话题</a>
             </li>
             <li class="" pid="paneThree">
                 <a href="javascript:void(0);">{{isselftag}}回复</a>
             </li>
 
-            <li class=" active" pid="paneFour">
-                <a href="javascript:void(0);">心情足迹</a>
-            </li>
+            <!--<li class=" active" pid="paneFour">-->
+                <!--<a href="javascript:void(0);">心情足迹</a>-->
+            <!--</li>-->
 
         </ul>
         <div class="tab-content">
@@ -37,7 +37,7 @@
                   <div class="hasnt-article">暂 无 任 何 收 藏</div>
               {%endif%}
             </div>
-            <div class="tab-pane pane-content" id="paneTwo">
+            <div class="tab-pane pane-content active" id="paneTwo">
               {% if topicList.length>0 %}
                 <ul class="itemlist">
                     {% for item in topicList %}
@@ -77,9 +77,9 @@
               {%endif%}
             </div>
             <!-- 课堂笔记 -->
-            <div class="tab-pane active" id="paneFour">
-              <div class="hasnt-article">暂 无 任 何 心 情 足 迹</div>
-            </div>
+            <!--<div class="tab-pane active" id="paneFour">-->
+              <!--<div class="hasnt-article">暂 无 任 何 心 情 足 迹</div>-->
+            <!--</div>-->
         </div>
     </div>
 </div>

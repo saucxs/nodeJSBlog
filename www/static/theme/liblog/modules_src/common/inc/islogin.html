@@ -1,13 +1,14 @@
 {% if islogin==1 %}
-  <ul class="nav navbar-nav navbar-right profile">
+  <ul class="nav navbar-nav navbar-right login-region">
 
             <li id="userInfo" class="dropdown">
-                <a href="/personal/@{{logininfo.name}}" class="dropdown-toggle">
+                <img class="img-circle" src="{{_web.url}}{{theme_url}}/{{'common/images/pic/man.jpg' if logininfo.pic=='' else logininfo.pic}}" title="{{logininfo.name}}">
+               <!-- <a href="/personal/@{{logininfo.name}}" class="dropdown-toggle" style="padding: 0">
                     <img class="img-circle" src="{{_web.url}}{{theme_url}}/{{'common/images/pic/man.jpg' if logininfo.pic=='' else logininfo.pic}}" title="{{logininfo.name}}">
                     <b class="caret"></b>
-                </a>
+                </a>-->
                 <ul id="userMenu" class="dropdown-menu" style="display: none;">
-                    <!-- <li>
+                   <!--  <li>
                         <a href="/message">我的消息
                             <span class="fa fa-envelope pull-right"></span>
                         </a>

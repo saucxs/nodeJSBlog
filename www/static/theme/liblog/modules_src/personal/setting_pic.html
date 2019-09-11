@@ -28,10 +28,10 @@
       <div class="box-head">
         <strong class="box-title">头像选择</strong></div>
       <div class="box-body">
-        <div class="m-manual-create">
+        <div class="m-manual-create" style="padding: 0;margin: 0">
           <div class="form-left">
             <div id="userInfoForm">
-              <div class="page-body avatar-list">
+              <div class="page-body avatar-list" style="padding-top: 0px">
                 <p><b>更换头像</b></p>
                 <input type="hidden" id="csrf" value="{{csrf}}">
                 <ul class="j_Alteravatar" id="j_Alteravatar" data-url="/member/save-avatar.html">
@@ -61,6 +61,6 @@
     </div>
 {% endblock %}
 
-{% block footer_other %}
+<!--{% block footer_other %}
     <script type="text/javascript" src="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}js/business/personal/setpic.js"></script>
-{% endblock %}
+{% endblock %}-->

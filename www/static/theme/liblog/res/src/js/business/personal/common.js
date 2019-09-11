@@ -7,9 +7,9 @@ $('#nav-tabs').delegate('li','click',function(){
   _this.addClass('active');
   $('#'+pid).show();
 })
-$("#userInfo").on('mouseover',function(){
+$("#userInfo").on('click',function(){
   $("#userMenu").show();
 })
-$("#userInfo").on('mouseout',function(){
+$("#userInfo").on('click',function(){
   $("#userMenu").hide();
 })

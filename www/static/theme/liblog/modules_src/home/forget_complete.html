@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{{title}}-{{_web.sitename}}</title>
+    <meta name="keywords" content="{{_web.keywords}}">
+    <meta name="description" content="{{title}}-{{_web.sitename}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    {%include "../common/inc/header.html"%}
+    <link href="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/register/register.css" rel="stylesheet">
+</head>
+<body>
+{% include "../common/inc/login_nav.html"%}
+<article class="container">
+    <div class="row forgetpassword-main">
+        <div class="col-md-6">
+            <div id="login">
+                <div class="panel panel-default well">
+                    <div class="panel-heading">
+                        <div class="panel-title">密码重置</div>
+                    </div>
+                    <div style="padding-top:30px" class="panel-body">
+                        <div id="forgetCompleteForm" class="form-horizontal bv-form" role="form">
+                            <div class="register-item">
+                                <div class="input-group">
+                                    <span class="input-group-addon glyphicon glyphicon-lock notop"></span>
+                                    <input type="password" class="form-control password" id="password" placeholder="密码" validate="required|password|minpwd" maxlength="16" aria-describedby="basic-addon1">
+                                    <input type="hidden" id="csrf" value="{{csrf}}">
+                                    <input type="hidden" id="code" value="{{code}}">
+                                </div>
+                            </div>
+                            <div class="register-item">
+                                <div class="input-group">
+                                    <span class="input-group-addon glyphicon glyphicon-lock notop"></span>
+                                    <input type="password" class="form-control repassword" placeholder="确认密码" validate="required|password|repassword|minpwd" maxlength="16" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <div class="register-item" id="captcha">
+                                <input type="hidden" name="name" value="" id="challenge">
+                                <input type="hidden" name="name" value="" id="seccode">
+                                <input type="hidden" name="name" value="" id="validate">
+                            </div>
+                            <p id="wait" class="show">正在加载验证码......</p>
+                            <div class="form-group">
+                                <div class="col-md-4 col-sm-6">
+                                    <button type="submit" class="btn btn-success btn-block dologin" id="confirmPassword">
+                                        确认重置</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" style="padding-right:0px;">
+            <div id="oAuth">
+                <div class="page-header">
+                    <h3>欢迎来到交流学习社区交流群</h3>
+                    <p>在这里，你可以充实自己，认识更多的朋友！</p>
+                </div>
+                <div class="col-sm-12 social-buttons" style="padding:0px;">
+                    <img src="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/index/images/biye.jpg" style="width: 100%;"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+{%include "../common/inc/footer.html"%}
+<script type="text/javascript" src="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}js/business/register/jquery.validate.js"></script>
+<script type="text/javascript" src="//static.geetest.com/static/tools/gt.js"></script>
+<script type="text/javascript" src="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}js/business/login/forgetcomplete.js"></script>
+</body>
+</html>

@@ -1,17 +1,26 @@
 <header class="head-region mini">
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{_web.festivalContent}}
+            </div>
+        </div>
       <div class="row">
-        <div class="col-md-2 logo-region">
+        <div class="col-md-3 logo-region">
             <div class="logo">
-                <a href="/" title="{{_web.sitename}}">
-                    <img  src="{{_web.url}}{{theme_url}}/common/images/common/logo.png" alt="交流学习社区交流群">
+                <a href="{{_web.homeurl}}" title="{{_web.sitename}}">
+                    {% if (_web.festivalContent) %}
+                    <img src="{{_web.url}}{{theme_url}}/common/images/common/logo_64_64_white.png" alt="{{_web.sitename}}">
+                    {% else %}
+                    <img src="{{_web.url}}{{theme_url}}/common/images/common/logo.png" alt="{{_web.sitename}}">
+                    {% endif %}
                 </a>
             </div>
-            <span class="logo-font">
-              交流学习社区
-          </span>
+            <a href="{{_web.homeurl}}" title="{{_web.sitename}}">
+                <span class="logo-font" style="color: {{_web.festivalFontColor}};">{{_web.siteNickName}}</span>
+            </a>
         </div>
-          <div class="col-md-8">
+          <div class="col-md-7">
             <ul class="site-nav site-navbar">
                {% for item in navList %}
                   <li class="item">

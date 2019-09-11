@@ -1,5 +1,5 @@
 /**
- * Created by saucxs on 16/4/19.
+ * Created by livi on 16/4/19.
  */
 
     var editor = new wangEditor('editor');
@@ -28,7 +28,7 @@
     editor.config.emotions = {
         'default': {
             title: '默认',
-            data: '/static/theme/default/res/emotions.data'
+            data: '/static/theme/liblog/res/emotions.data'
         }
     };
     editor.config.uploadImgFileName = 'img';

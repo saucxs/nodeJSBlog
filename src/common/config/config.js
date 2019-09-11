@@ -4,14 +4,14 @@
  */
 export default {
     //key: value
-    host: "127.0.0.1", //禁止端口访问
+    host: "127.0.0.1", //禁止端口访问，如 http://115.29.109.30:8361；删除则不限制。
     port: 8361,
     pagesize: 10,
     route_on: true,
     encoding: "utf-8",
     OSS: {
         on: false, //true上传oss服务器，false上传应用服务器
-        domain: "http://statics.mwcxs.top", //例：http://statics.jsout.com
+        domain: "http://statics.mwcxs.top", //例：http://statics.mwcxs.top
         img_url: "static/upload/pics/",
         region: 'oss-cn-nanjing', //例：oss-cn-shanghai
         accessKeyId: '', //id

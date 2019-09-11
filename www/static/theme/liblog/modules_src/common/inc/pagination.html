@@ -1,5 +1,6 @@
 <div class="dataTables_wrapper">
     <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+        <span>共{{pageData.count}}条</span>
         <a class="paginate_button previous {{pageData.preclass}}" href="{{pageData.prelink}}" >上一页</a>
         {% for i in range(pageData.pageStart, pageData.pageEnd+1) -%}
           <span>

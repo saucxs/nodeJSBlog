@@ -1,4 +1,4 @@
-<DIV class="col-md-6 col-lg-3 main-right">
+<DIV class="col-md-3 col-lg-3 main-right">
     <div class="cloud">
         <div class="createtopic">
             <a href="/topic/create/index.html" id="create_topic_btn">
@@ -7,17 +7,17 @@
         </div>
     </div>
     <div class="cloud qqregion">
-        <h3 class="widget_titx">
-            <span>交流咨询</span>
+        <div class="h2" style="border-bottom-color: {{_web.festivalBgColor}}">
             <span class="github-region">
-					<a href="https://github.com/saucxs/nodeJSBlog">
-						<img src="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/index/images/github.png" alt=""class="github" />
-					</a>
-					<a href="https://github.com/saucxs/nodeJSBlog/stargazers"  target="_blank" class="count"><b></b><i></i>
-						<span id="gitcount"></span>
-            </a>
+                <a href="https://github.com/saucxs/nodeJSBlog">
+                    <img src="{{_web.url}}{{theme_url}}/{{think.Dev_Src}}css/business/index/images/github.png" alt=""class="github" />
+                </a>
+                <a href="https://github.com/saucxs/nodeJSBlog/stargazers"  target="_blank" class="count"><b></b><i></i>
+                    <span id="gitcount"></span>
+                </a>
             </span>
-        </h3>
+            交流咨询
+        </div>
         <ul class="qqs">
             <div>官方QQ群<br/>群号<span>663940201,欢迎加入！</span>
                 <div class="qqlist">
@@ -28,7 +28,7 @@
         </ul>
     </div>
     <div class="cloud newMember">
-        <h3>最新会员</h3>
+        <h3 class="h2" style="border-bottom-color: {{_web.festivalBgColor}}">最新会员</h3>
         <ul>
             {% for item in memberList %}
             <li>
@@ -42,7 +42,7 @@
         </ul>
     </div>
     <div class="cloud">
-        <h3>标签云</h3>
+        <h3 class="h2" style="border-bottom-color: {{_web.festivalBgColor}}">标签云</h3>
         <ul>
             {% for item in tagList %}
             <li><a href="/category/{{item.id}}.html" target="_blank">{{item.tagname}}</a></li>
@@ -50,7 +50,13 @@
         </ul>
     </div>
     <div class="links">
-        <h3><span><a href="/links.html">申请友情链接</a></span>友情链接</h3>
+        <div class="h2" style="border-bottom-color: {{_web.festivalBgColor}}">
+            <strong>友情链接</strong>
+            <span>
+                <a href="/links.html" target="_blank">申请友情链接</a>
+            </span>
+        </div>
+        <!--<h3><span><a href="/links.html">申请友情链接</a></span>友情链接</h3>-->
         <ul>
             {% for item in linksList %}
             <li><a href="{{item.link}}" target="_blank">{{item.domain}}</a></li>

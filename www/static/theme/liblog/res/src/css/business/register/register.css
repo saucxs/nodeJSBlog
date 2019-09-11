@@ -15,7 +15,7 @@
 .clear:after{display: block;content: "";height: 0;clear: both;visibility: hidden;}
 .clear{zoom:1}
 .markdown-body .article-title{text-align: center;padding-top: 10px;}
-.right-main{margin-top: 10px;width: 90%;margin: 0 auto;padding: 5% 12%;}
+.right-main{margin-top: 10px;margin: 0 auto;padding: 5%;}
 .agree-region{margin-bottom: 10px;}
 .code-region{margin-bottom: 0px;}
 #register{width: 90%;}
@@ -31,3 +31,22 @@
 #notice {
   color: red;
 }
+
+/*忘记密码css*/
+.forgetpassword-main {
+  padding-top: 60px;
+  min-height: 650px;
+  margin-top: -5px;
+}
+#oAuth{width: 100%;float: right;border-left: 1px solid #ddd;min-height: 412px;padding-left: 28px;}
+.page-header{margin: 0px 0 20px;border-bottom: 1px solid #ddd;}
+@media (max-width: 768px){
+  #oAuth {
+    padding: 0 15px 10px 15px;
+  }
+  #oAuth .page-header {
+    margin: 10px 0;
+    padding: 0 15px;
+  }
+}
+

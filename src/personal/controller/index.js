@@ -33,9 +33,10 @@ export default class extends Base {
             this.assign("isself", isself);
             this.assign("isselftag", isselftag);
             // 排行
-            let pointList = await think.cache("pointList", () => {
-                return this.model("personal").getPointList();
-            });
+            // let pointList = await think.cache("pointList", () => {
+            //     return this.model("personal").getPointList();
+            // });
+            let pointList = await this.model('user').field("id,name,point").order("point desc").limit(10).select();
             this.assign("pointList", pointList);
 
             //我的话题

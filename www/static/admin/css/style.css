@@ -1,3 +1,6 @@
 @charset "utf-8";
 /* 你自己的样式 */
+p{
+    overflow-x: auto !important;
+}
 

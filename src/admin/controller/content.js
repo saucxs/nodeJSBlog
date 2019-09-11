@@ -21,19 +21,19 @@ export default class extends Base
         // 设置分页
         if(selval){
             //文章筛选
-            let map={};
+            let map={item: {'!=': 2},};
             map[this.get('type')]=1;
             articlelist = await this.model("admin").getArticleJoinRecord(map,pagenumber,pagesize);
             result = await this.model("admin").getPageCountSelect(map,pagenumber,pagesize);
             this.assign("type", selval);
         }else if(searchtxt){
             //文章搜索
-            let map={title: ["like", "%"+searchtxt+"%"],['li_article.id']:["like", "%"+searchtxt*1+"%"],_logic: "OR"};
+            let map={item: {'!=': 2},title: ["like", "%"+searchtxt+"%"],['li_article.id']:["like", "%"+searchtxt*1+"%"],_logic: "OR"};
             articlelist = await this.model("admin").getArticleJoinRecord(map,pagenumber,pagesize);
             result = await this.model("admin").getPageCountSelect(map,pagenumber,pagesize);
             this.assign("type", '');
         }else{
-            let map={};
+            let map={item: {'!=': 2},};
             articlelist = await this.model("admin").getArticleJoinRecord(map,pagenumber,pagesize);
             result = await this.model("admin").getPageCountSelect(map,pagenumber,pagesize);
             this.assign("type", '');
@@ -56,6 +56,58 @@ export default class extends Base
         return this.display();
     }
 
+    //资讯列表
+    async newsAction()
+    {
+        let articlelist ={},result={},list={};
+        let selval=this.get('type');
+        let searchtxt=this.get('search');
+        let pagenumber=this.get('page')||1;
+        let pagesize=this.get('pagesize')||1;
+        // 设置分页
+        let map={item: 2};
+        console.log('---------------------------')
+        articlelist = await this.model("admin").getArticleNewsJoinRecord(map,pagenumber,pagesize);
+        result = await this.model("admin").getPageCountSelect(map,pagenumber,pagesize);
+        this.assign("type", '');
+        // console.log(selval,searchtxt,'0000000000000000000000000000000000000000')
+        // if(selval){
+        //     //文章筛选
+        //     let map={};
+        //     map[this.get('type')]=1;
+        //     articlelist = await this.model("admin").getArticleJoinRecord(map,pagenumber,pagesize);
+        //     result = await this.model("admin").getPageCountSelect(map,pagenumber,pagesize);
+        //     this.assign("type", selval);
+        // }else if(searchtxt){
+        //     //文章搜索
+        //     let map={title: ["like", "%"+searchtxt+"%"],['li_article.id']:["like", "%"+searchtxt*1+"%"],_logic: "OR"};
+        //     articlelist = await this.model("admin").getArticleJoinRecord(map,pagenumber,pagesize);
+        //     result = await this.model("admin").getPageCountSelect(map,pagenumber,pagesize);
+        //     this.assign("type", '');
+        // }else{
+        //     let map={item: 2};
+        //     console.log('---------------------------')
+        //     articlelist = await this.model("admin").getArticleNewsJoinRecord(map,pagenumber,pagesize);
+        //     result = await this.model("admin").getPageCountSelect(map,pagenumber,pagesize);
+        //     this.assign("type", '');
+        // }
+        let Page = think.adapter("template", "page");
+        let page = new Page(this.http);
+        let pageData = page.pagination(result);
+        this.assign("articlelist", articlelist);
+        this.assign('pageData', pageData);
+
+        // 设置分页
+        let pageSize = await this.config("pagesize");
+        if (!this.get("page")) {
+            return this.redirect("/admin/content/news?page=1&pagesize=" + pageSize);
+        }
+        this.assign("title", "资讯管理");
+        this.assign("pagecount",this.get("page"));
+        this.assign("pagesize",pageSize);
+        this.assign('isdraft', false);
+        return this.display('news');
+    }
     async draftlistAction(){
         // 设置分页
         let map={ispublished:0};
@@ -246,30 +298,6 @@ export default class extends Base
                 return this.json(err);
             }
         });
-        /*熊掌号每天*/
-        // let article_day = await this.model("admin").getArticleListTwenty();
-        // let xiongzhang = [];
-        // let xiongzhangData = {
-        //     sysdata: sysdata,
-        //     article_day: article_day
-        // }
-        // xiongzhang.push(xiongzhangData.sysdata.homeurl);
-        // for(let i=0,length=xiongzhangData.article_day.length;i<length;i++){
-        //     xiongzhang.push(xiongzhangData.sysdata.homeurl + 'page/'+ xiongzhangData.article_day[i].id +'.html')
-        // }
-        // var xzBody = xiongzhang.join('\n');
-        // request.post({
-        //     url: 'http://data.zz.baidu.com/urls?appid=1618168323287168&token=RJP3Edxoplt9Der5&type=batch',
-        //     body: xzBody
-        // }, function (err, res, body) {
-        //     console.log(body,'baiduxiongzhang666666666666666666666666666666666666666666666666666666666666666daily')
-        //     if(!err){
-        //         return this.json({err:err,body:body});
-        //     }else{
-        //         return this.json(err);
-        //     }
-        // });
-
     }
 
     async updatestatusAction(){   //草稿箱发布接口

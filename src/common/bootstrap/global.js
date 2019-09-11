@@ -13,7 +13,7 @@
 'use strict';
 /*****项目函数库*******/
 
-//  日期格式化
+// livi 日期格式化
 global.liFormatDate = function(formatStr) {
     let newdate=formatStr.split(' ')[0].replace(/-/g, "/");
     return newdate;

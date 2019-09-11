@@ -8,6 +8,8 @@ $(function() {
             author: $(".author").val(),
             copyright: $(".copyright").val(),
             theme: $(".theme").val(),
+            homeurl: $(".homeUrl").val(),
+            baidu_tuisong: $(".baiduTuiSong").val(),
             tongji: $(".tongji").val(),
             __CSRF__: G_csrf
         }

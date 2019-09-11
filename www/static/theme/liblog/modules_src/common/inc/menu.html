@@ -1,25 +1,39 @@
-<header class="head-region">
+<header class="head-region" style="background: {{_web.festivalBgColor}}">
     <div class="container">
+        {% if (_web.festivalContent) %}
+        <div class="row">
+            <div class="col-md-12 festival-style" style="color: {{_web.festivalFontColor}}">
+                {{_web.festivalContent}}
+            </div>
+        </div>
+        {% endif %}
       <div class="row">
-          <div class="col-md-5 col-md-offset-7">
-            {% include "../inc/top.html" %}
+          <div class="col-md-6 margin-top-bottom">
+              <p class="microsoft marquee">
+                  <a style="color: {{_web.festivalFontColor}}" href="{{_headerNotice.url}}" title="{{_headerNotice.content}}">{{_headerNotice.content}}</a>
+              </p>
+          </div>
+          <div class="col-md-6 margin-top-bottom">
+              {% include "../inc/top.html" %}
           </div>
       </div>
       <div class="row">
-        <div class="col-md-2 logo-region">
+        <div class="col-md-3 logo-region">
             <div class="logo">
                 <a href="{{_web.homeurl}}" title="{{_web.sitename}}">
-                    <img src="{{_web.url}}{{theme_url}}/common/images/common/logo.png" alt="交流学习社区">
+                    {% if (_web.festivalContent) %}
+                    <img src="{{_web.url}}{{theme_url}}/common/images/common/logo_64_64_white.png" alt="{{_web.sitename}}">
+                    {% else %}
+                    <img src="{{_web.url}}{{theme_url}}/common/images/common/logo.png" alt="{{_web.sitename}}">
+                    {% endif %}
                 </a>
             </div>
             <a href="{{_web.homeurl}}" title="{{_web.sitename}}">
-              <span class="logo-font">
-                  交流学习社区
-              </span>
+                <span class="logo-font" style="color: {{_web.festivalFontColor}};">{{_web.siteNickName}}</span>
             </a>
         </div>
-        <div class="col-md-8">
-          <ul class="site-nav site-navbar">
+        <div class="col-md-4 menu-content menu-special-home clearfix">
+          <ul class="site-nav site-navbar site-menu">
              {% for item in navList %}
                 <li class="item">
                     <a href="{{ item.url }}" target="{%if(item.target=='0') %}_self{%else%}_blank{% endif %}">{{ item.menuname }}</a>
@@ -28,23 +42,26 @@
                       {% endif %}
                 </li>
              {% endfor %}
-             <li class="navto-search" style="margin-left:40px;">
-                 <a href="javascript:;" class="search-show active">
-                  <span style="color:#fff;margin-right:10px">搜索</span><i class="fa fa-search"></i>
-                 </a>
-             </li>
           </ul>
         </div>
-        <div class="col-md-2">
-            {% include "../inc/islogin.html" %}
-        </div>
+          <div class="col-md-5 search-content">
+              <div class="col-md-7 col-sm-6 menu-content">
+                  <form method="get" class="site-search-form" action="/search?keyword=" style="padding: 0;">
+                      <input class="search-input" name="keyword" type="text" placeholder="search..." style="height: 30px;font-size: 12px;">
+                      <button class="search-btn" type="submit" style="height: 30px;width: 20%"><i class="fa fa-search"></i></button>
+                  </form>
+              </div>
+             <div class="col-md-5 col-sm-6 menu-content">
+                 {% include "../inc/islogin.html" %}
+             </div>
+          </div>
       </div>
     </div>
 </header>
-<div class="site-search">
-  <div class="container">
-    <form method="get" class="site-search-form" action="/search?keyword=">
-      <input class="search-input" name="keyword" type="text" placeholder="输入关键字搜索"><button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
-    </form>
-  </div>
-</div>
+<!--<div class="site-search">-->
+  <!--<div class="container">-->
+    <!--<form method="get" class="site-search-form" action="/search?keyword=">-->
+      <!--<input class="search-input" name="keyword" type="text" placeholder="输入关键字搜索"><button class="search-btn" type="submit"><i class="fa fa-search"></i></button>-->
+    <!--</form>-->
+  <!--</div>-->
+<!--</div>-->

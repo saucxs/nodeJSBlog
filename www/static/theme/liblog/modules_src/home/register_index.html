@@ -13,26 +13,26 @@
         <div class="right-main" id="registerForm">
               <div class="register-item">
                   <div class="input-group">
-                    <span class="input-group-addon glyphicon glyphicon-user notop" id="basic-addon1"></span>
+                    <span class="input-group-addon glyphicon glyphicon-user notop"></span>
                     <input type="text" class="form-control username" id="username" placeholder="用户名" validate="required|isok|user" maxlength="16" aria-describedby="basic-addon1">
                     <input type="hidden" id="csrf" value="{{csrf}}">
                   </div>
               </div>
               <div class="register-item">
                   <div class="input-group">
-                    <span class="input-group-addon glyphicon glyphicon-lock notop" id="basic-addon1"></span>
+                    <span class="input-group-addon glyphicon glyphicon-lock notop"></span>
                     <input type="password" class="form-control password" id="password" placeholder="密码" validate="required|password|minpwd" maxlength="16" aria-describedby="basic-addon1">
                   </div>
               </div>
               <div class="register-item">
                 <div class="input-group">
-                  <span class="input-group-addon glyphicon glyphicon-lock notop" id="basic-addon1"></span>
+                  <span class="input-group-addon glyphicon glyphicon-lock notop"></span>
                   <input type="password" class="form-control repassword" placeholder="确认密码" validate="required|password|repassword|minpwd" maxlength="16" aria-describedby="basic-addon1">
                 </div>
               </div>
               <div class="register-item">
                 <div class="input-group">
-                  <span class="input-group-addon glyphicon glyphicon-envelope notop" id="basic-addon1"></span>
+                  <span class="input-group-addon glyphicon glyphicon-envelope notop"></span>
                   <input type="text" class="form-control email" id="email" placeholder="邮箱将用于帐号校验" validate="required|email|checkemail" aria-describedby="basic-addon1">
                 </div>
               </div>
@@ -42,10 +42,14 @@
                 <input type="hidden" name="name" value="" id="validate">
               </div>
               <p id="wait" class="show">正在加载验证码......</p>
-              <div class="agree-region">
+              <div>
                 <span class="agree"><a href="/policy.html">《网站注册协议》</a></span><br/>
               </div>
-              <button type="submit" class="btn btn-primary" id="register">同意并注册</button>
+            <button type="submit" class="btn btn-primary" id="register">同意并注册</button>
+            <div class="register-item">
+                <a href="/login.html">返回登陆</a>
+            </div>
+
         </div>
     </article>
 {% endblock %}

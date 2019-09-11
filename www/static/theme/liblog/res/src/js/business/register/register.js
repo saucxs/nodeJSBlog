@@ -64,14 +64,14 @@
             if(form){
               //验证通过
               var newData={
-                    name:$("#username").val(),
-                password:$("#password").val(),
+                  name:$("#username").val(),
+                  password:$("#password").val(),
                   email:$("#email").val(),
                   code:$("#code").val(),
                   geetest_challenge:$("#challenge").val(),
                   geetest_seccode:$("#seccode").val(),
                   geetest_validate:$("#validate").val(),
-                __CSRF__:$("#csrf").val()
+                  __CSRF__:$("#csrf").val()
               }
               //提交请求
               if($("#challenge").val()!==""&&$("#seccode").val()!==""&&$("#validate").val()!==""){
@@ -81,8 +81,9 @@
                     type:'POST',
                     success:function(json){
                       if(json.errno===0){
-                          alert("注册成功！");
-                          window.location.href="/personal/@"+$("#username").val();
+                          alert(json.errmsg);
+                          window.location.href = "/login.html"
+                          // window.location.href="/personal/@"+$("#username").val();
                       }else{
                           alert(json.errmsg);
                       }

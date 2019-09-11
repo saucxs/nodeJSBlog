@@ -75,9 +75,9 @@ a{
     *clear: both;
 }
 .breadcrumb {
-    padding: 12px 15px;
-    background-color: #e9e9e9;
-}
+     padding: 12px 15px;
+     background-color: #e9e9e9;
+ }
 /*左部导航begin*/
 .left-nav{
     min-height: 700px;

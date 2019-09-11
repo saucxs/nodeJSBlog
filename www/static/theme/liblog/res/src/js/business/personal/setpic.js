@@ -1,6 +1,8 @@
 var el=$("#j_Alteravatar");
 el.delegate('li','click',function(){
+    console.log('000000000000000000000000000000000000')
   var picUrl=$(this).find("img").attr("avatar-url");
+    console.log(picUrl, '==========================================')
   if(picUrl){
     var newData={
         pic:picUrl,

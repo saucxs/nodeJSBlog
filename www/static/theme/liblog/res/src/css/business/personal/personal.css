@@ -18,16 +18,26 @@ body{padding-top: 0px;}
     text-align: center;
 }
 .margin-right .panel-default{width: 80%;float: right;}
-.main-user{height: 135px;padding-left: 14px}
 .main-user .info>div {
-    height: 60px;
+    height: 25px;
     margin: 0;
     border-right: 1px #ccc dotted;
     text-align: center;
 }
-.col-md-3 {
-    width: 23%;
+/*add*/
+.background-info{
+    background: #fff;
+    width: 89%;
 }
+.menu{
+    font-size: 16px;
+    line-height: 40px;
+}
+.active a{
+  color: #5579EE;
+}
+
+/*add end*/
 .user-info {
     background-color: #FAFAFA;
     border-bottom: 1px solid #ddd;
@@ -35,8 +45,8 @@ body{padding-top: 0px;}
 .nav>li>a:hover{background-color:#fff;}
 .profile .dropdown:hover{background-color: #fff;}
 .container {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 0px;
+    padding-left: 0px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -50,7 +60,7 @@ article.mainbd {
   padding-left: 15px;
   width: 30%;
 }
-.user-info{height: 160px;}
+.user-info{padding: 10px;}
 .header{
     position: fixed;
     box-shadow: 0 5px 5px rgba(1,1,1,.02);
@@ -65,10 +75,9 @@ article.mainbd {
     text-decoration: none;
 }
 .social-buttons .btn.focus, .social-buttons .btn:focus, .social-buttons .btn:hover{color: #fff;}
-.img-circle.avatar{float: right;}
 .pheader-left{padding-top: 25px;}
 .margin-right{margin-top: 5px;float: right;}
-.p-points{float:right;}
+.p-points{margin: 20px 0px;}
 .header{padding: 18px 0px 0px}
 .navbar-right {
     float: right!important;
@@ -114,7 +123,7 @@ padding: 10px;
 .mypublish{margin-bottom: 20px;}
 
 /*个人中心设置*/
-.page-body{width: 92.3%;margin: 0 auto;}
+.page-body{width: 89%;margin: 0 auto;}
 .m-foot .m-copyright.minifoot {margin-left: 22%;width:73%;}
 .page-right .input-group .form-control{height: 32px;border-radius: 4px;width: 128%;}
 .register-item{margin-bottom: 10px}
