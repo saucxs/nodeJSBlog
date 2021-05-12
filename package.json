@@ -18,7 +18,7 @@
         "co": "4.5.0",
         "geetest": "^3.0.2",
         "marked": "^0.3.5",
-        "nodemailer": "^0.7.1",
+        "nodemailer": "^6.4.16",
         "node-crontab": "0.0.8",
         "nunjucks": "^2.2.0",
         "pm2": "^1.1.2",
